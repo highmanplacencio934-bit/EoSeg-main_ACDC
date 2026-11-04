@@ -1,0 +1,12 @@
+{
+  "state": "queued",
+  "supervisor": {
+    "pid": 1127217,
+    "start_ticks": 4037482,
+    "cwd": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc",
+    "command": "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/bin/python /Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/experiments/asee_text_ccps_full_v2/preparation/ccps_runtime.py --execute "
+  },
+  "predecessor": "outputs/ablations/asee_text_only_v2/20261103T064255Z",
+  "created_at_utc": "2026-11-03T13:38:37Z",
+  "one_shot": true
+}

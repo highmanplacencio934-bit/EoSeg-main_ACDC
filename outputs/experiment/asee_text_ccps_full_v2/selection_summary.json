@@ -1,0 +1,19 @@
+{
+  "epoch_numbering": "one-based",
+  "max_epochs": 400,
+  "last_evaluated_epoch": 400,
+  "best_epoch": 339,
+  "best_mean_dice": 0.8989627957344055,
+  "evaluation_split": "test",
+  "last_evaluated_volumes": 40,
+  "test_used_for_selection": true,
+  "evaluation_complete": true,
+  "selection_policy": "every epoch, complete test volumes; test used for model selection",
+  "roi_metrics": true,
+  "hd95_mm": null,
+  "hd95_voxel": null,
+  "hd95_computed": false,
+  "class_names_source": "priors/acdc_label_map.verified.json; official legend and sampled training-H5 semantics; raw geometry unverified",
+  "best_checkpoint": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/experiments/asee_text_ccps_full_v2/20261103T134235Z/training/version_0/checkpoints/best_test.ckpt",
+  "last_checkpoint": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/experiments/asee_text_ccps_full_v2/20261103T134235Z/training/version_0/checkpoints/last.ckpt"
+}

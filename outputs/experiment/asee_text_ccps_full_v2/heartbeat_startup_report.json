@@ -1,0 +1,47 @@
+{
+  "run": "outputs/experiments/asee_text_ccps_full_v2/20261103T134235Z",
+  "training": {
+    "pid": 1134380,
+    "start_ticks": 4061387,
+    "cwd": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc",
+    "command": "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/bin/python scripts/run_acdc_deterministic_v2.py fit --config /Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/experiments/asee_text_ccps_full_v2/20261103T134235Z/config.yaml "
+  },
+  "startup_passed": true,
+  "initialization_comparison": {
+    "initial_exact": true,
+    "optimizer_groups_exact": true
+  },
+  "progress": {
+    "epoch_one_based": 5,
+    "global_step": 470,
+    "batch_index": 93,
+    "loss": 1.3960132598876953,
+    "time_utc": "2026-11-03T13:46:52Z"
+  },
+  "file_changes": {
+    "added": [
+      "outputs/experiments/asee_text_ccps_full_v2/preparation/cpu_probe.py",
+      "outputs/experiments/asee_text_ccps_full_v2/preparation/ccps_runtime.py",
+      "outputs/experiments/asee_text_ccps_full_v2/preparation/cpu_probe_result.json",
+      "outputs/experiments/asee_text_ccps_full_v2/preparation/interface_checks.json",
+      "outputs/experiments/asee_text_ccps_full_v2/preparation/preparation_audit/**",
+      "outputs/experiments/asee_text_ccps_full_v2/preparation/gpu_validation/**",
+      "outputs/experiments/asee_text_ccps_full_v2/waiting_receipt.json",
+      "outputs/experiments/asee_text_ccps_full_v2/gpu_validation_receipt.json",
+      "outputs/experiments/asee_text_ccps_full_v2/predecessor_completion.json",
+      "outputs/experiments/asee_text_ccps_full_v2/waiting.log",
+      "outputs/experiments/asee_text_ccps_full_v2/20261103T134235Z/**",
+      ".codex/acdc_asee_text_ccps_full_training_run.md"
+    ],
+    "modified": [
+      "outputs/experiments/asee_text_ccps_full_v2/preparation/readiness.json",
+      "AGENTS.md",
+      ".codex/acdc_text_ccps_and_seed42_schedule.md",
+      ".codex/acdc_baseline_snapshot.json",
+      ".codex/README.md"
+    ],
+    "deleted": [],
+    "production_model_loss_augmentation_or_frozen_predecessor_changes": false,
+    "scientific_parameter_changes": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/bin/python",
+    "scripts/run_acdc_deterministic_v2.py",
+    "fit",
+    "--config",
+    "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/experiments/asee_text_ccps_full_v2/20261103T134235Z/config.yaml"
+  ],
+  "created_at_utc": "2026-11-03T13:42:35Z",
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "TORCH_HOME": "/Disk/HDD/Sk/.cache/torch",
+    "TIMM_USE_OLD_CACHE": "1",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "PYTHONHASHSEED": "0",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONPATH": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/experiments/asee_text_ccps_full_v2/preparation:/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/baseline/preparation:/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc",
+    "TORCHINDUCTOR_CACHE_DIR": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/experiments/asee_text_ccps_full_v2/20261103T134235Z/compile_cache"
+  },
+  "fresh_pretrained": true,
+  "segmentation_checkpoint_loaded": false,
+  "smoke": false,
+  "config_sha256": "82c67cc78e631da54730ce5f7bf15094de3ddea660a5652711b6eecb81167a39",
+  "runtime_sha256": "ddfed1be5fe31d1c394c8fc362221feeac9b9b5c1a057d872d69176b5e71c1e6"
+}
