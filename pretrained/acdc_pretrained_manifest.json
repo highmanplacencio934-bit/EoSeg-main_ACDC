@@ -1,0 +1,72 @@
+{
+  "dataset": "ACDC",
+  "segmentation": {
+    "num_classes": 4,
+    "background_label": 0,
+    "foreground_label_ids": [
+      1,
+      2,
+      3
+    ],
+    "num_q": 6,
+    "queries_per_foreground_class": 2,
+    "no_object_logit_index": 4
+  },
+  "vision_encoder": {
+    "backbone_name": "vit_large_patch14_reg4_dinov2",
+    "runtime_patch_size": 16,
+    "input_size": [
+      224,
+      224
+    ],
+    "path": "/Disk/HDD/Sk/.cache/torch/hub/checkpoints/dinov2_vitl14_reg4_pretrain.pth",
+    "sha256": "36e4deffbaef061a2576705b0c36f93621e2ae20bf6274694821b0b492551b51",
+    "class_specific": false,
+    "loading": "unchanged timm pretrained flow from TORCH_HOME cache; no classification-head or backbone weight slicing"
+  },
+  "text_encoder": {
+    "repository": "emilyalsentzer/Bio_ClinicalBERT",
+    "revision": "d5892b39a4adaed74b92212a44081509db72f87b",
+    "path": "pretrained/Bio_ClinicalBERT/d5892b39a4adaed74b92212a44081509db72f87b",
+    "file_sha256": {
+      "LICENSE": "9e8f42111a19340d74194466063143fbc4294b50dd26ad5c60a06dcaeafa99d2",
+      "README.md": "bf666c7d32897296d028b655fdc0a3f16d7309cc69af11e93d3473218c2b00f2",
+      "config.json": "4a470c65801cab55fc1cc5854aa2bfebc18428ac1989777e9acefc5a9f0c1444",
+      "pytorch_model.bin": "a18c4c260fb5c0978b86658615106d5617050b5f14dac6ceb5e0d8beb2f9f719",
+      "source_manifest.json": "b91689857d10a2190fc7fadad1a0d1ee8a24f7cd356aff6ba7b7b919a009192f",
+      "vocab.txt": "eeaa9875b23b04b4c54ef759d03db9d1ba1554838f8fb26c5d96fa551df93d02"
+    },
+    "source_manifest_sha256": "b91689857d10a2190fc7fadad1a0d1ee8a24f7cd356aff6ba7b7b919a009192f",
+    "class_specific": false,
+    "output_dim": 768,
+    "pooling": "last_hidden_state_CLS",
+    "device_for_building": "cpu",
+    "local_files_only": true,
+    "foreground_descriptions": [
+      {
+        "label_id": 1,
+        "name": "Right Ventricle Cavity",
+        "name_zh": "右心室腔",
+        "abbreviation": "RV",
+        "description": "Right ventricle cavity: The blood-filled cavity of the right ventricle in a cardiac short-axis MRI image."
+      },
+      {
+        "label_id": 2,
+        "name": "Myocardium",
+        "name_zh": "心肌",
+        "abbreviation": "MYO",
+        "description": "Myocardium: The muscular wall surrounding the left ventricular cavity in a cardiac short-axis MRI image."
+      },
+      {
+        "label_id": 3,
+        "name": "Left Ventricle Cavity",
+        "name_zh": "左心室腔",
+        "abbreviation": "LV",
+        "description": "Left ventricle cavity: The blood-filled cavity of the left ventricle in a cardiac short-axis MRI image."
+      }
+    ]
+  },
+  "prior_output": "priors/acdc_asee_80_20_v1.pt",
+  "background_in_prior": false,
+  "raw_geometry_verified": false
+}
