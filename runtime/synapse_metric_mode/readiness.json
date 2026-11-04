@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "metric_mode": "dice_only_by_default",
+  "compute_hd95_mm_default": false,
+  "compute_hd95_voxel_default": false,
+  "sources": {
+    "runtime/synapse_metric_mode/test_metric_mode.py": "bf26301ead02a3b6f43eb21f0a50c0219372a2bdbe78160d53c66043665ad09a",
+    "runtime/synapse_metric_mode/run.py": "d872fd6fac4374895e8b28df2a8b908d85541f22090752081424281c020a8985",
+    "runtime/synapse_metric_mode/metric_mode.py": "66ff3ce8f02e9f8f3b8db70f188199c1f92e4065786b1e79430941ce5978145a",
+    "runtime/synapse_metric_mode/configs/ccps.yaml": "f785f6bf625ca9f4f3d7efebed5d84d57aeaff0487c0de12a8add05db7161570",
+    "runtime/synapse_metric_mode/configs/baseline.yaml": "8cb4a3999f82dba5d726fc74789c2743cf50df94d63c5fecfeba758e74088cee",
+    "runtime/synapse_metric_mode/configs/asee.yaml": "7141fc9e4f226f9ef674ee917467c9fedd48aa19cc4720630977c3cbe88ce3a9"
+  },
+  "cpu_tests": 7,
+  "cached_case_classes": 96,
+  "zero_hd95_calls": true,
+  "evidence": "outputs/audit/hd95_mm_disabled/20261029T071421Z",
+  "existing_v2_training_protocol_gate": "unchanged/passed for all three profiles",
+  "gpu_test_performed": false,
+  "current_training_hot_switched": false
+}

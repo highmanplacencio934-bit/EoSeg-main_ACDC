@@ -1,0 +1,80 @@
+{
+  "verified": true,
+  "dataset": "ACDC",
+  "background_label": 0,
+  "num_classes": 4,
+  "num_foreground": 3,
+  "source": "ACDC official manual references specify 0=background,1=RV cavity,2=myocardium,3=LV cavity; current-code names match; sampled training H5 image/label overlays of patients031/050/070/090 visually cross-checked.",
+  "official_url": "https://www.creatis.insa-lyon.fr/Challenge/acdc/evaluation.html",
+  "verification_scope": "Official label legend + four training-patient sampled MRI/label overlays; not full raw-NIfTI identity or physical geometry verification",
+  "original_preprocessing_provenance_verified": false,
+  "geometry_verified": false,
+  "evidence": {
+    "overlay": "outputs/audit/acdc_prior_adaptation/20261102T044732Z/training_label_overlays.png",
+    "samples": [
+      {
+        "case": "patient031_frame01_slice_1.h5",
+        "label_file_sha256": "b2c6c2a5004bfc0be41a5b83a6a27bf6eb5847b21c8894e91dfc6782e696bd2e",
+        "counts": {
+          "0": 51879,
+          "1": 1281,
+          "2": 1081,
+          "3": 1055
+        }
+      },
+      {
+        "case": "patient050_frame01_slice_2.h5",
+        "label_file_sha256": "2c08691870db1cf2bcf8db889ad6f21fdafb12e4727a2152be8deabe7b2e42ad",
+        "counts": {
+          "0": 59328,
+          "1": 1207,
+          "2": 999,
+          "3": 1954
+        }
+      },
+      {
+        "case": "patient070_frame01_slice_0.h5",
+        "label_file_sha256": "09f31e9386d4dd1ea088aad695726e63a9f8a8d8bdef48c2a0feaef918b4009c",
+        "counts": {
+          "0": 50684,
+          "1": 1190,
+          "2": 620,
+          "3": 754
+        }
+      },
+      {
+        "case": "patient090_frame04_slice_0.h5",
+        "label_file_sha256": "ef7ef576fc00f09048c660ca2e19b7770557b3a26df7d531e290619fb23766f8",
+        "counts": {
+          "0": 32349,
+          "1": 1381,
+          "2": 412,
+          "3": 354
+        }
+      }
+    ]
+  },
+  "classes": [
+    {
+      "label_id": 1,
+      "name": "Right Ventricle Cavity",
+      "name_zh": "右心室腔",
+      "abbreviation": "RV",
+      "description": "Right ventricle cavity: The blood-filled cavity of the right ventricle in a cardiac short-axis MRI image."
+    },
+    {
+      "label_id": 2,
+      "name": "Myocardium",
+      "name_zh": "心肌",
+      "abbreviation": "MYO",
+      "description": "Myocardium: The muscular wall surrounding the left ventricular cavity in a cardiac short-axis MRI image."
+    },
+    {
+      "label_id": 3,
+      "name": "Left Ventricle Cavity",
+      "name_zh": "左心室腔",
+      "abbreviation": "LV",
+      "description": "Left ventricle cavity: The blood-filled cavity of the left ventricle in a cardiac short-axis MRI image."
+    }
+  ]
+}
