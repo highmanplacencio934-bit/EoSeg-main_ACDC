@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-11-02T12:38:02.224655+00:00",
+  "command": [
+    "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/bin/python",
+    "scripts/run_acdc_deterministic_v2.py",
+    "fit",
+    "--config",
+    "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/baseline/20261102T123802Z/config.yaml"
+  ],
+  "source_readiness_sha256": "20755817d492d12690e53dad1b0cd2292c8420074237654dc6efd339d259337f",
+  "launcher_sha256": "7b7f16c22f2ad05a17aaa14ee52c1be501d943508900e30962f3af5405f60398",
+  "config_sha256": "e797f4b015c5017db860e55320d66501b2d034a976b19f1c1bfeb275103f777c",
+  "science": {
+    "epochs": 400,
+    "lr": 0.0005,
+    "batch": 16,
+    "workers": 8,
+    "seed": 0,
+    "roi": true,
+    "deterministic": true,
+    "asee": false,
+    "ccps": false
+  },
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "TORCH_HOME": "/Disk/HDD/Sk/.cache/torch",
+    "TIMM_USE_OLD_CACHE": "1",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "PYTHONHASHSEED": "0",
+    "OMP_NUM_THREADS": "1"
+  }
+}

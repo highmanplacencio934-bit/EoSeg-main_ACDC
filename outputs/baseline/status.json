@@ -1,0 +1,5 @@
+{
+  "state": "failed_completion_validation",
+  "exit_code": 0,
+  "error": "AssertionError()"
+}

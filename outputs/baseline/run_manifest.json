@@ -1,0 +1,2716 @@
+{
+  "hostname": "5090",
+  "python": "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/bin/python",
+  "python_version": "3.11.15",
+  "cwd": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc",
+  "argv": [
+    "scripts/run_acdc_deterministic_v2.py",
+    "fit",
+    "--config",
+    "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/baseline/20261102T123802Z/config.yaml"
+  ],
+  "project_root": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc",
+  "versions": {
+    "torch": "2.13.0+cu132",
+    "torchvision": "0.28.0+cu132",
+    "lightning": "2.6.6",
+    "torchmetrics": "1.9.0",
+    "timm": "1.0.29",
+    "transformers": "5.17.0",
+    "jsonargparse": "4.52.0",
+    "wandb": "0.30.0",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "medpy": "0.5.2",
+    "h5py": "3.16.0"
+  },
+  "torch_cuda": "13.2",
+  "device": "cuda:0",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5090 D",
+    "total_memory_bytes": 33659879424,
+    "capability": [
+      12,
+      0
+    ],
+    "compiled_arches": [
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ]
+  },
+  "source_sha256": {
+    "main.py": "973d5d700e4d6b55f2c01b5a46eb3ec15b1f3791f5a9f96deee026ccfc1bbe28",
+    "requirements.txt": "65f19a23fa8980ad5414da36cd123e64d9a9f3f4e6f04d227d618f6bcd61fe02",
+    "sitecustomize.py": "d34911d3004555f1eb8612bb1b6092c9dd1a866ddf970eb082722daa329cb3a8",
+    "models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "models/eoseg_asee_ccps.py": "d12d79694ff146e8303370d4c32c522acbc23f5bca45d747656316b8d1905a93",
+    "models/asee_ccps.py": "58f712a3b9e87cdfe3db4ff6d7f93aac375e4a5e53689144d7783b3a987b9471",
+    "models/ccps_selector.py": "67b49a96b801c8442d437d529026e8e8e46e9695c3823ac285bf5aaebe30566c",
+    "models/eoseg.py": "11a025c4cb0661f85f4fa28d75c1fee2f6263a1957aa695eeba0c44dece4e19b",
+    "models/vit_rvsa_mtp.py": "85891916d2849d5cb65d4dbcc73c41e61b6547dad7d7e9291ab82a066dd8e049",
+    "models/asee.py": "82e0f1c0e8f5fe45912824d3ef41120d3317fd53ef3cd0d11dc4d3193666c82f",
+    "models/eoseg_asee.py": "22ebce3129ebe17fc7e967e35c4580bf087129edc9aebd87d9aa649118414a8b",
+    "models/vit.py": "f6bd8b1c3362fc5e4207bde02aed156b60eca43518e0e9854a4e9dbd2ac6f3e1",
+    "datasets/medical_binary_semantic.py": "72eb18e5b10f2c141fa7b4a8b5844a552d9d39ec009c844057f61e5681a1c43c",
+    "datasets/synapse_npz_dataset.py": "f82f3242de9239ce29552c9a16d39704be8d162ecb5785b0bbf87d406984e6e0",
+    "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "datasets/lightning_data_module.py": "fea768cb9eb5d17d19a8a6953ad4886b3e9ced57731d001895d941ca115d39f8",
+    "datasets/synapse_transforms.py": "3b5643beb17d15f1370a652de9cc1070f0803481034767db10a3f3f604aa78f7",
+    "datasets/acdc_splits.py": "6b03bf23821a0adef826ce2fa29245bde9c88387c9120d575ff8d51f329d3656",
+    "datasets/acdc_dataset.py": "752970dd58d4e3c2edbf03d46e89e907fa3849177476640bc81607635d2310ea",
+    "datasets/acdc_semantic.py": "839f1f0850c4da694a0942b087ead8a154ef3d779a590b317360e0bbd31091b6",
+    "datasets/synapse_semantic.py": "910240caf372f7ae8b4381ed617ed915695643692526c5aad92311823242a3dc",
+    "datasets/synapse_splits.py": "5edd56e4545018bdb97b162d27b50cbed64ef241ba8f811c89dba9d1aad2e501",
+    "datasets/isic_binary_semantic.py": "459954120282fdb67b2d5b73b8cedf77363847b0e651af31a92c91ae3f4d583d",
+    "training/deterministic_point_sampling.py": "6c7ea7e8a1c5a7bd7c7d11f27c099e33602951b777c45c7b7da8f5017fa3ceed",
+    "training/deterministic_mask_loss.py": "99f54efeca881f0eb4659d46250b991f19bc619a67c4209551dd707c35f65bcc",
+    "training/synapse_test_selection.py": "9733c4c667c17e1657fd1501f792108d86bf98e6a147146d2530dd1dd3b0d4d0",
+    "training/acdc_mask_classification_semantic.py": "ff83fcc0df941463acdcba3157839c190c09ca2ec768a2cb7becb3f8bd26a8e2",
+    "training/mask_classification_semantic.py": "117a23bad32ca0997e7d847cea098c99615e35e3e0aed0db37f80ad70d86d9cc",
+    "training/query_binary_mask_classification.py": "467c2acc1d8607721f9868a2faf3c9113168011e4dc78aac9909ce8268182a0e",
+    "training/acdc_evaluation.py": "a306e84d05218d9650ec94472a4af0e9f5a63b9f3c6d058a3eab3003c9ef7a80",
+    "training/deterministic_execution_v2.py": "57633a54fe0bc5d17f6741a9a352a1d7f79f6883868bf9d1a4381e9f7283e159",
+    "training/synapse_physical_semantic.py": "3b783ab6498ea0dc5860cc74a537f8bc5cc1084afd6e63fc28401002f76c3b34",
+    "training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "training/acdc_val_logger.py": "00920b0b72a749a7b199cd3415272eb8e40a1cfe2260829bc4b232d3bb9ac42d",
+    "training/acdc_test_logger.py": "75ecc187231ab3f6ecb70c666ab867fbb7508f65553bf7720028acaa28e7ece6",
+    "training/mask_classification_ccps.py": "983008735cb2a14d12bf1a661a55d6cc452f1d62d99021f9cf5710910381c538",
+    "training/synapse_teacher_semantic.py": "5fcb4a4398f5698153320249def656a2f017a4bfa7a620859b78281398bccd8f",
+    "training/medical_val_logger.py": "e4f8c5bc64478657ad3eb3b7c49df4e52ea8de898b0c5e05465c2e1bea556cf1",
+    "training/synapse_roi_evaluation.py": "abad8c1a967c3daba6e5aa3ecd4e390ae7c4d16883fe7f237a16775fc930540a",
+    "training/synapse_physical_selection.py": "75910d8cda9e66d7db6640cd42dbe8ec335a9b6a7e2cd97a79c3c6b49724a40b",
+    "training/acdc_deterministic.py": "64587dee36faa96549caf5ed7b136eeedf604be2903862ac318993428df14301",
+    "training/two_stage_warmup_poly_schedule.py": "902f266e1048e5bc460742c3ee0d0a55e18a662f2e4b3be0cd702dd8ff9f9794",
+    "training/mask_classification_panoptic.py": "6282b2bc56a3870fad0db7395ea364e32485169b55cc8fc69366edd3e75f42ea",
+    "training/mask_classification_instance.py": "955ceb88151e10c874548cfdb76cdd136132fd68d7190a1d3ea5ee659f7194c9",
+    "training/deterministic_protocol.py": "0d6cad99f98191ffa1e70ef2a89693ea91c5d114162e1744fe4e5002de7b2170",
+    "training/synapse_roi_metrics.py": "6270fa1062c4b02e49087382c9c1b3f017c75061c1486716e3efe479294ab9b0",
+    "training/pixel_classification_semantic.py": "1bf3a7d0b4595e29ff5c9f4e6334c0ad9a5b7dab62a75b92b7225ea1f68aaaf8",
+    "training/medical_binary_segmentation.py": "48bef8214df554dfc55eed5c589175e3325dc30486d1e2e2b4c20674ab9a486b",
+    "training/synapse_selection.py": "ad5d725a6f7000bcd64975f65bae389a6d4fefdc2d5de20c1d74fba659657757",
+    "training/synapse_teacher_selection.py": "297a53a2398b31aa031c791d7b27ab9d00f9c4474f109a831db86ba9312abe3c",
+    "training/synapse_physical_geometry.py": "37607e55115ee50829d14ef25fc05e1f606168bdbaf40192bd40076f162b70bb",
+    "training/acdc_baseline_semantic.py": "bb6638d01d8eed4c95049912cdddea39fa9519b97a1056e511fb5852339f3972",
+    "training/mask_classification_loss.py": "9c759093a76e97a203c269ad3ee32985defcb83ce382c9eaf340c443c2219e6f",
+    "training/run_artifacts.py": "ccd09168e789b1f39677af380429b9131de1d0f8d281f73fac5e75eac3935eaf",
+    "training/lightning_module.py": "94c7d9e4631b667246d58add04153f570b679bcd94a2480ada00f512a23d62aa",
+    "configs/acdc/vit_query_mul_scale_fusion.yaml": "156c2d5873e13042c99ee9de1ad14b243c0b3c06c076c8b50e25786714631515",
+    "configs/acdc/vit_query_mul_scale_fusion_asee_ccps.yaml": "fc3a13c50e10e6beee65e8e65bf20b9ccb5346874a6f0a6620beb88e262757a1",
+    "configs/acdc/vit_query_mul_scale_fusion_asee.yaml": "513476682849505561d1e8f5ae41fb812c07fac4fb54639ed31dc4dcc5b8dc73",
+    "configs/acdc/deterministic_v2/ccps.yaml": "75df45fa5b9c3b2e436d6973b051fbc3f8559da83e5221539b561e53f456aac4",
+    "configs/acdc/deterministic_v2/baseline.yaml": "4119efbd75874c96c47ac53a7d9724c870bbf57b1d871833b4804aaaef46e17f",
+    "configs/acdc/deterministic_v2/asee.yaml": "d003eda8d3e6cad556de71b13c62fa763d7d311780b158e17928eb7fc7ea83cc"
+  },
+  "manifest_sha256": {
+    "ACDC/lists_ACDC/train.txt": "26486ea3b3058bab5f88c739cc6c216f085b90e660b4363bc976e5a17cf965d2",
+    "ACDC/lists_ACDC/test.txt": "e2c0f42c0c6627c217d3ea0fcd676f3d41a101655d27d6629b1db4cea94c3d47"
+  },
+  "data_paths": {
+    "base_dir": "ACDC",
+    "list_dir": "ACDC/lists_ACDC"
+  },
+  "resolved_cli_config": {
+    "seed_everything": 0,
+    "trainer": {
+      "accelerator": "auto",
+      "strategy": "auto",
+      "devices": 1,
+      "num_nodes": 1,
+      "precision": "16-mixed",
+      "logger": {
+        "class_path": "lightning.pytorch.loggers.CSVLogger",
+        "init_args": {
+          "save_dir": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/baseline/20261102T123802Z",
+          "name": "training",
+          "version": null,
+          "prefix": "",
+          "flush_logs_every_n_steps": 100
+        }
+      },
+      "callbacks": [
+        {
+          "class_path": "lightning.pytorch.callbacks.ModelCheckpoint",
+          "init_args": {
+            "dirpath": null,
+            "filename": "best_test",
+            "monitor": "metrics/test_mean_dice",
+            "verbose": false,
+            "save_last": true,
+            "save_top_k": 1,
+            "save_on_exception": false,
+            "save_weights_only": true,
+            "mode": "max",
+            "auto_insert_metric_name": false,
+            "every_n_train_steps": null,
+            "train_time_interval": null,
+            "every_n_epochs": 1,
+            "save_on_train_epoch_end": null,
+            "enable_version_counter": false
+          }
+        },
+        {
+          "class_path": "training.acdc_test_logger.ACDCTestLogger",
+          "init_args": {
+            "history_filename": "acdc_test_history.csv",
+            "best_filename": "acdc_best_result.txt"
+          }
+        },
+        {
+          "class_path": "baseline_runtime.Startup",
+          "init_args": {
+            "output": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/baseline/20261102T123802Z"
+          }
+        }
+      ],
+      "fast_dev_run": false,
+      "max_epochs": 400,
+      "min_epochs": null,
+      "max_steps": -1,
+      "min_steps": null,
+      "max_time": null,
+      "limit_train_batches": null,
+      "limit_val_batches": null,
+      "limit_test_batches": null,
+      "limit_predict_batches": null,
+      "overfit_batches": 0.0,
+      "val_check_interval": null,
+      "check_val_every_n_epoch": 1,
+      "num_sanity_val_steps": 0,
+      "log_every_n_steps": null,
+      "enable_checkpointing": null,
+      "enable_progress_bar": false,
+      "enable_model_summary": null,
+      "accumulate_grad_batches": 1,
+      "gradient_clip_val": 0.01,
+      "gradient_clip_algorithm": "norm",
+      "deterministic": null,
+      "benchmark": null,
+      "inference_mode": true,
+      "use_distributed_sampler": true,
+      "profiler": null,
+      "detect_anomaly": false,
+      "barebones": false,
+      "plugins": null,
+      "sync_batchnorm": false,
+      "reload_dataloaders_every_n_epochs": 0,
+      "default_root_dir": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/baseline/20261102T123802Z",
+      "enable_autolog_hparams": true,
+      "model_registry": null
+    },
+    "model": {
+      "class_path": "training.acdc_mask_classification_semantic.ACDCMaskClassificationSemantic",
+      "init_args": {
+        "network": {
+          "class_path": "models.eoseg.EoSegMultiQSegFusion",
+          "init_args": {
+            "encoder": {
+              "class_path": "models.vit.ViT",
+              "init_args": {
+                "patch_size": 16,
+                "backbone_name": "vit_large_patch14_reg4_dinov2"
+              }
+            },
+            "num_q": 6
+          }
+        },
+        "img_size": [
+          224,
+          224
+        ],
+        "num_classes": 4,
+        "attn_mask_annealing_enabled": false,
+        "attn_mask_annealing_start_steps": null,
+        "attn_mask_annealing_end_steps": null,
+        "ignore_idx": 255,
+        "lr": 0.0005,
+        "llrd": 0.8,
+        "llrd_l2_enabled": true,
+        "lr_mult": 1.0,
+        "weight_decay": 0.05,
+        "num_points": 12544,
+        "oversample_ratio": 3.0,
+        "importance_sample_ratio": 0.75,
+        "poly_power": 0.9,
+        "warmup_steps": [
+          500,
+          1000
+        ],
+        "no_object_coefficient": 0.1,
+        "mask_coefficient": 5.0,
+        "dice_coefficient": 5.0,
+        "class_coefficient": 2.0,
+        "mask_thresh": 0.8,
+        "overlap_thresh": 0.8,
+        "ckpt_path": null,
+        "delta_weights": false,
+        "load_ckpt_class_head": true
+      }
+    },
+    "data": {
+      "class_path": "datasets.acdc_semantic.ACDCSemantic",
+      "init_args": {
+        "base_dir": "ACDC",
+        "path": null,
+        "root_dir": null,
+        "list_dir": "ACDC/lists_ACDC",
+        "img_size": [
+          224,
+          224
+        ],
+        "num_classes": 4,
+        "batch_size": 16,
+        "num_workers": 8,
+        "color_jitter_enabled": true,
+        "scale_range": [
+          0.5,
+          2.0
+        ],
+        "check_empty_targets": true,
+        "ignore_idx": 255,
+        "drop_background": false,
+        "make_rgb": true
+      }
+    },
+    "compile_disabled": false,
+    "compile_test": false,
+    "roi_metrics": true,
+    "deterministic_enabled": true,
+    "deterministic_protocol": "acdc_ce2d_stableseg_execution_v2",
+    "deterministic_profile": "baseline",
+    "deterministic_probe_batches": 0,
+    "deterministic_output_dir": "outputs/determinism/acdc_ce2d_stableseg_execution_v2/baseline",
+    "deterministic_readiness": "outputs/determinism/acdc_ce2d_stableseg_execution_v2/readiness.json",
+    "optimizer": null,
+    "lr_scheduler": null,
+    "ckpt_path": null,
+    "weights_only": null
+  },
+  "estimated_steps": 37600,
+  "split_summary": {
+    "policy": "user_confirmed_80_train_20_shared_validation_test",
+    "counts": {
+      "train": 1512,
+      "val": 40,
+      "test": 40
+    },
+    "patient_counts": {
+      "train": 80,
+      "val": 20,
+      "test": 20
+    },
+    "patients": {
+      "train": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "val": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "test": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    "sha256": {
+      "train": "26486ea3b3058bab5f88c739cc6c216f085b90e660b4363bc976e5a17cf965d2",
+      "val": "e2c0f42c0c6627c217d3ea0fcd676f3d41a101655d27d6629b1db4cea94c3d47",
+      "test": "e2c0f42c0c6627c217d3ea0fcd676f3d41a101655d27d6629b1db4cea94c3d47"
+    },
+    "fit_evaluation_split": "test",
+    "independent_val_split_used_for_selection": false,
+    "validation_alias_of": "test",
+    "test_used_for_selection": true
+  },
+  "model_class": "training.acdc_mask_classification_semantic.ACDCMaskClassificationSemantic",
+  "network_class": "models.eoseg.EoSegMultiQSegFusion",
+  "criterion_class": "training.deterministic_mask_loss.DeterministicMaskClassificationLoss",
+  "optimizer_defaults": [
+    {
+      "lr": 0.001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.05,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": true
+    }
+  ],
+  "optimizer_groups": [
+    [
+      {
+        "name": "network.encoder.backbone.norm.bias",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.norm.weight",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.23.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.22.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.0004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.21.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.0003200000000000001,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.20.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.00025600000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.19.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.00020480000000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.18.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.00016384000000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.17.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.00013107200000000006,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.norm2.bias",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.norm2.weight",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.norm1.bias",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.16.norm1.weight",
+        "lr": 0,
+        "initial_lr": 0.00010485760000000004,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.norm2.bias",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.norm2.weight",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.norm1.bias",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.15.norm1.weight",
+        "lr": 0,
+        "initial_lr": 8.388608000000005e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.norm2.bias",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.norm2.weight",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.norm1.bias",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.14.norm1.weight",
+        "lr": 0,
+        "initial_lr": 6.710886400000004e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.norm2.bias",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.norm2.weight",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.norm1.bias",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.13.norm1.weight",
+        "lr": 0,
+        "initial_lr": 5.368709120000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.norm2.bias",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.norm2.weight",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.norm1.bias",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.12.norm1.weight",
+        "lr": 0,
+        "initial_lr": 4.294967296000003e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.norm2.bias",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.norm2.weight",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.norm1.bias",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.11.norm1.weight",
+        "lr": 0,
+        "initial_lr": 3.435973836800002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.norm2.bias",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.norm2.weight",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.norm1.bias",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.10.norm1.weight",
+        "lr": 0,
+        "initial_lr": 2.748779069440002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.norm2.bias",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.norm2.weight",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.norm1.bias",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.9.norm1.weight",
+        "lr": 0,
+        "initial_lr": 2.199023255552002e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.norm2.bias",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.norm2.weight",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.norm1.bias",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.8.norm1.weight",
+        "lr": 0,
+        "initial_lr": 1.7592186044416015e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.norm2.bias",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.norm2.weight",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.norm1.bias",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.7.norm1.weight",
+        "lr": 0,
+        "initial_lr": 1.4073748835532812e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.norm2.bias",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.norm2.weight",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.norm1.bias",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.6.norm1.weight",
+        "lr": 0,
+        "initial_lr": 1.1258999068426251e-05,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.norm2.bias",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.norm2.weight",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.norm1.bias",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.5.norm1.weight",
+        "lr": 0,
+        "initial_lr": 9.007199254741001e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.norm2.bias",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.norm2.weight",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.norm1.bias",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.4.norm1.weight",
+        "lr": 0,
+        "initial_lr": 7.2057594037928016e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.norm2.bias",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.norm2.weight",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.norm1.bias",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.3.norm1.weight",
+        "lr": 0,
+        "initial_lr": 5.7646075230342414e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.norm2.bias",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.norm2.weight",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.norm1.bias",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.2.norm1.weight",
+        "lr": 0,
+        "initial_lr": 4.6116860184273935e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.norm2.bias",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.norm2.weight",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.norm1.bias",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.1.norm1.weight",
+        "lr": 0,
+        "initial_lr": 3.689348814741915e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.ls2.gamma",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.mlp.fc2.bias",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.mlp.fc2.weight",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.mlp.fc1.bias",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.mlp.fc1.weight",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 4194304
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.norm2.bias",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.norm2.weight",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.ls1.gamma",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.attn.proj.bias",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.attn.proj.weight",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1048576
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.attn.qkv.bias",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 3072
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.attn.qkv.weight",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 3145728
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.norm1.bias",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.blocks.0.norm1.weight",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.patch_embed.proj.bias",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.encoder.backbone.patch_embed.proj.weight",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 786432
+      },
+      {
+        "name": "network.encoder.backbone.pos_embed",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 200704
+      },
+      {
+        "name": "network.encoder.backbone.reg_token",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 4096
+      },
+      {
+        "name": "network.encoder.backbone.cls_token",
+        "lr": 0,
+        "initial_lr": 2.951479051793532e-06,
+        "numel": 1024
+      },
+      {
+        "name": "network.layer_gate.2.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 3
+      },
+      {
+        "name": "network.layer_gate.2.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 1536
+      },
+      {
+        "name": "network.layer_gate.0.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 512
+      },
+      {
+        "name": "network.layer_gate.0.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 524288
+      },
+      {
+        "name": "network.class_head.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 5
+      },
+      {
+        "name": "network.class_head.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 5120
+      },
+      {
+        "name": "network.mask_head.2.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.mask_head.2.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 1048576
+      },
+      {
+        "name": "network.mask_head.0.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.mask_head.0.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 1048576
+      },
+      {
+        "name": "network.feature_upscale.12.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 1024
+      },
+      {
+        "name": "network.feature_upscale.12.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 262144
+      },
+      {
+        "name": "network.feature_upscale.10.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 256
+      },
+      {
+        "name": "network.feature_upscale.10.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 256
+      },
+      {
+        "name": "network.feature_upscale.9.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 256
+      },
+      {
+        "name": "network.feature_upscale.9.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 2304
+      },
+      {
+        "name": "network.feature_upscale.7.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 256
+      },
+      {
+        "name": "network.feature_upscale.7.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 256
+      },
+      {
+        "name": "network.feature_upscale.6.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 256
+      },
+      {
+        "name": "network.feature_upscale.6.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 524288
+      },
+      {
+        "name": "network.feature_upscale.4.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 512
+      },
+      {
+        "name": "network.feature_upscale.4.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 512
+      },
+      {
+        "name": "network.feature_upscale.3.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 512
+      },
+      {
+        "name": "network.feature_upscale.3.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 4608
+      },
+      {
+        "name": "network.feature_upscale.1.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 512
+      },
+      {
+        "name": "network.feature_upscale.1.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 512
+      },
+      {
+        "name": "network.feature_upscale.0.bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 512
+      },
+      {
+        "name": "network.feature_upscale.0.weight",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 2097152
+      },
+      {
+        "name": "network.layer_fusion_bias",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 3
+      },
+      {
+        "name": "network.query_embed",
+        "lr": 0.0,
+        "initial_lr": 0.0005,
+        "numel": 6144
+      }
+    ]
+  ],
+  "callbacks": [
+    "training.acdc_test_logger.ACDCTestLogger",
+    "baseline_runtime.Startup",
+    "lightning.pytorch.callbacks.lr_monitor.LearningRateMonitor",
+    "lightning.pytorch.callbacks.rich_model_summary.RichModelSummary",
+    "lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint",
+    "training.acdc_deterministic.ACDCProtocolRecord"
+  ],
+  "selection_policy": "test set used for checkpoint selection; no gradient updates",
+  "sitecustomize": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/sitecustomize.py"
+}
