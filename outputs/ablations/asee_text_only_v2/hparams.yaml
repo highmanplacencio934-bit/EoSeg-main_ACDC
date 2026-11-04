@@ -1,0 +1,60 @@
+_instantiator: lightning.pytorch.cli.instantiate_module
+attn_mask_annealing_enabled: false
+attn_mask_annealing_end_steps: null
+attn_mask_annealing_start_steps: null
+base_dir: ACDC
+batch_size: 16
+check_empty_targets: true
+ckpt_path: null
+class_coefficient: 2.0
+color_jitter_enabled: true
+delta_weights: false
+dice_coefficient: 5.0
+drop_background: false
+ignore_idx: 255
+img_size:
+- 224
+- 224
+importance_sample_ratio: 0.75
+list_dir: ACDC/lists_ACDC
+llrd: 0.8
+llrd_l2_enabled: true
+load_ckpt_class_head: true
+lr: 0.0005
+lr_mult: 1.0
+make_rgb: true
+mask_coefficient: 5.0
+mask_thresh: 0.8
+network:
+  class_path: models.eoseg_asee.EoSegMultiQSegFusionASEE
+  init_args:
+    encoder:
+      class_path: models.vit.ViT
+      init_args:
+        backbone_name: vit_large_patch14_reg4_dinov2
+        patch_size: 16
+    enhance_patch: true
+    enhance_query: true
+    freeze_text_projection: false
+    num_q: 6
+    patch_update: plan
+    prior_path: priors/acdc_asee_80_20_v1.pt
+    queries_per_class: 2
+    use_probability: false
+    use_text: true
+no_object_coefficient: 0.1
+num_classes: 4
+num_points: 12544
+num_workers: 8
+overlap_thresh: 0.8
+oversample_ratio: 3.0
+path: null
+poly_power: 0.9
+root_dir: null
+scale_range:
+- 0.5
+- 2.0
+warmup_steps:
+- 500
+- 1000
+weight_decay: 0.05

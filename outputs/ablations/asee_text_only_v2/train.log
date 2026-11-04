@@ -1,0 +1,1392 @@
+Seed set to 0
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loading `train_dataloader` to estimate number of stepping batches.
+/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+[STARTUP] ACDC ASEE text-only; probability=False patch=True query=True CCPS=False seed=0 workers=8 ROI=True strict=True HD95=False
+/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:242: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+┏━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name      ┃ Type                                ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ network   │ EoSegMultiQSegFusionASEE            │  316 M │ train │     0 │
+│ 1 │ criterion │ DeterministicMaskClassificationLoss │      0 │ train │     0 │
+│ 2 │ metrics   │ ModuleList                          │      0 │ train │     0 │
+└───┴───────────┴─────────────────────────────────────┴────────┴───────┴───────┘
+Trainable params: 315 M                                                         
+Non-trainable params: 266 K                                                     
+Total params: 316 M                                                             
+Total estimated model params size (MB): 1,264.985                               
+Modules in train mode: 593                                                      
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/lightning/pytorch/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 16. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+[TRAIN] imgs dtype=torch.float32, min=-0.1673, max=1.1932
+/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:2431: UserWarning: Dynamo does not know how to trace the builtin `scipy.ndimage._nd_image.spline_filter1d.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] WON'T CONVERT torch_dynamo_resume_in_zoom_at_861 /Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/scipy/ndimage/_interpolation.py line 861 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] due to: 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Traceback (most recent call last):
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2319, in __call__
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = self._inner_convert(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 777, in __call__
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2102, in _compile
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_utils_internal.py", line 96, in wrapper_function
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return function(*args, **kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1687, in compile_inner
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile_inner(code, one_graph, hooks)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1747, in _compile_inner
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     dynamo_output = compile_frame(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1584, in compile_frame
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     bytecode, tracer_output = transform_code_object(code, transform)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/bytecode_transformation.py", line 1821, in transform_code_object
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = transformations(instructions, code_options)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1555, in transform
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = trace_frame(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 368, in _fn
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return fn(*args, **kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 954, in trace_frame
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     run_tracer()
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 935, in run_tracer
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer.run()
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1950, in run
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     while self.step():
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1603, in step
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.dispatch_table[inst.opcode](self, inst)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1076, in wrapper
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return inner_fn(self, inst)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4520, in CALL
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self._call(inst)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4511, in _call
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.call_function(fn, args, kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1493, in call_function
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/lazy.py", line 514, in realize_and_forward
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return getattr(self.realize(), name)(*args, **kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/misc.py", line 1887, in call_function
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return NumpyNdarrayVariable.create(tx, proxy)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/tensor.py", line 2960, in create
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return wrap_fx_proxy_cls(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3636, in wrap_fx_proxy_cls
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     out: VTTypeAlias = _wrap_fx_proxy(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                        ^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3767, in _wrap_fx_proxy
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     example_value = get_fake_value(proxy.node, tx, allow_non_graph_fake=True)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3949, in get_fake_value
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return _get_fake_value_impl(node, tx, allow_non_graph_fake)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4154, in _get_fake_value_impl
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     _wrap_graph_break_with_torch_runtime_err(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3938, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise exc.with_traceback(e.__traceback__) from None
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3935, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     gb_fn()
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4155, in <lambda>
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     lambda: unimplemented(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]             ^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/exc.py", line 723, in unimplemented
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise Unsupported(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] torch._dynamo.exc.TorchRuntimeError: RuntimeError when making fake tensor call
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Explanation: Dynamo failed to run FX node with fake tensors: call_function <Wrapped function <original true_divide>>(*(FakeTensor(..., size=(2,), dtype=torch.int64), FakeTensor(..., size=(2,), dtype=torch.int64)), **{'out': FakeTensor(..., size=(2,), dtype=torch.float64), 'where': FakeTensor(..., size=(2,), dtype=torch.bool)}): got RuntimeError('Boolean value of Tensor with more than one value is ambiguous')
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Developer debug context: 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]  For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb4315.html
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] from user code:
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]    File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/scipy/ndimage/_interpolation.py", line 888, in torch_dynamo_resume_in_zoom_at_861
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     zoom = np.divide(zoom_nominator, zoom_div,
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Traceback (most recent call last):
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2319, in __call__
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = self._inner_convert(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 777, in __call__
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2102, in _compile
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_utils_internal.py", line 96, in wrapper_function
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return function(*args, **kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1687, in compile_inner
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile_inner(code, one_graph, hooks)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1747, in _compile_inner
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     dynamo_output = compile_frame(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1584, in compile_frame
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     bytecode, tracer_output = transform_code_object(code, transform)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/bytecode_transformation.py", line 1821, in transform_code_object
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = transformations(instructions, code_options)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1555, in transform
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = trace_frame(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 368, in _fn
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return fn(*args, **kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 954, in trace_frame
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     run_tracer()
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 935, in run_tracer
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer.run()
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1950, in run
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     while self.step():
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1603, in step
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.dispatch_table[inst.opcode](self, inst)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1076, in wrapper
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return inner_fn(self, inst)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4520, in CALL
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self._call(inst)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4511, in _call
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.call_function(fn, args, kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1493, in call_function
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/lazy.py", line 514, in realize_and_forward
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return getattr(self.realize(), name)(*args, **kwargs)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/misc.py", line 1887, in call_function
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return NumpyNdarrayVariable.create(tx, proxy)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/tensor.py", line 2960, in create
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return wrap_fx_proxy_cls(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3636, in wrap_fx_proxy_cls
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     out: VTTypeAlias = _wrap_fx_proxy(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                        ^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3767, in _wrap_fx_proxy
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     example_value = get_fake_value(proxy.node, tx, allow_non_graph_fake=True)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3949, in get_fake_value
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return _get_fake_value_impl(node, tx, allow_non_graph_fake)
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4154, in _get_fake_value_impl
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     _wrap_graph_break_with_torch_runtime_err(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3938, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise exc.with_traceback(e.__traceback__) from None
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3935, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     gb_fn()
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4155, in <lambda>
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     lambda: unimplemented(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]             ^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/exc.py", line 723, in unimplemented
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise Unsupported(
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] torch._dynamo.exc.TorchRuntimeError: RuntimeError when making fake tensor call
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Explanation: Dynamo failed to run FX node with fake tensors: call_function <Wrapped function <original true_divide>>(*(FakeTensor(..., size=(2,), dtype=torch.int64), FakeTensor(..., size=(2,), dtype=torch.int64)), **{'out': FakeTensor(..., size=(2,), dtype=torch.float64), 'where': FakeTensor(..., size=(2,), dtype=torch.bool)}): got RuntimeError('Boolean value of Tensor with more than one value is ambiguous')
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Developer debug context: 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]  For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb4315.html
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] from user code:
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]    File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/scipy/ndimage/_interpolation.py", line 888, in torch_dynamo_resume_in_zoom_at_861
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     zoom = np.divide(zoom_nominator, zoom_div,
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+W1103 14:44:29.458000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] WON'T CONVERT torch_dynamo_resume_in_zoom_at_843 /Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/scipy/ndimage/_interpolation.py line 843 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] due to: 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Traceback (most recent call last):
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2319, in __call__
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = self._inner_convert(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 777, in __call__
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2102, in _compile
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_utils_internal.py", line 96, in wrapper_function
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return function(*args, **kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1687, in compile_inner
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile_inner(code, one_graph, hooks)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1747, in _compile_inner
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     dynamo_output = compile_frame(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1584, in compile_frame
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     bytecode, tracer_output = transform_code_object(code, transform)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/bytecode_transformation.py", line 1821, in transform_code_object
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = transformations(instructions, code_options)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1555, in transform
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = trace_frame(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 368, in _fn
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return fn(*args, **kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 954, in trace_frame
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     run_tracer()
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 935, in run_tracer
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer.run()
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1950, in run
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     while self.step():
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1603, in step
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.dispatch_table[inst.opcode](self, inst)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1076, in wrapper
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return inner_fn(self, inst)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4520, in CALL
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self._call(inst)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4511, in _call
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.call_function(fn, args, kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1493, in call_function
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/lazy.py", line 514, in realize_and_forward
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return getattr(self.realize(), name)(*args, **kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/misc.py", line 1887, in call_function
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return NumpyNdarrayVariable.create(tx, proxy)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/tensor.py", line 2960, in create
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return wrap_fx_proxy_cls(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3636, in wrap_fx_proxy_cls
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     out: VTTypeAlias = _wrap_fx_proxy(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                        ^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3767, in _wrap_fx_proxy
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     example_value = get_fake_value(proxy.node, tx, allow_non_graph_fake=True)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3949, in get_fake_value
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return _get_fake_value_impl(node, tx, allow_non_graph_fake)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4154, in _get_fake_value_impl
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     _wrap_graph_break_with_torch_runtime_err(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3938, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise exc.with_traceback(e.__traceback__) from None
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3935, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     gb_fn()
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4155, in <lambda>
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     lambda: unimplemented(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]             ^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/exc.py", line 723, in unimplemented
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise Unsupported(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] torch._dynamo.exc.TorchRuntimeError: RuntimeError when making fake tensor call
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Explanation: Dynamo failed to run FX node with fake tensors: call_function <Wrapped function <original true_divide>>(*(FakeTensor(..., size=(2,), dtype=torch.int64), FakeTensor(..., size=(2,), dtype=torch.int64)), **{'out': FakeTensor(..., size=(2,), dtype=torch.float64), 'where': FakeTensor(..., size=(2,), dtype=torch.bool)}): got RuntimeError('Boolean value of Tensor with more than one value is ambiguous')
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Developer debug context: 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]  For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb4315.html
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] from user code:
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]    File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/scipy/ndimage/_interpolation.py", line 888, in torch_dynamo_resume_in_zoom_at_843
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     zoom = np.divide(zoom_nominator, zoom_div,
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Traceback (most recent call last):
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2319, in __call__
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = self._inner_convert(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 777, in __call__
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2102, in _compile
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_utils_internal.py", line 96, in wrapper_function
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return function(*args, **kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1687, in compile_inner
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile_inner(code, one_graph, hooks)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1747, in _compile_inner
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     dynamo_output = compile_frame(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1584, in compile_frame
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     bytecode, tracer_output = transform_code_object(code, transform)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/bytecode_transformation.py", line 1821, in transform_code_object
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = transformations(instructions, code_options)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1555, in transform
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = trace_frame(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 368, in _fn
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return fn(*args, **kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 954, in trace_frame
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     run_tracer()
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 935, in run_tracer
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer.run()
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1950, in run
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     while self.step():
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1603, in step
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.dispatch_table[inst.opcode](self, inst)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1076, in wrapper
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return inner_fn(self, inst)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4520, in CALL
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self._call(inst)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 4511, in _call
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.call_function(fn, args, kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1493, in call_function
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.push(fn.call_function(self, args, kwargs))  # type: ignore[arg-type]
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/lazy.py", line 514, in realize_and_forward
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return getattr(self.realize(), name)(*args, **kwargs)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/misc.py", line 1887, in call_function
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return NumpyNdarrayVariable.create(tx, proxy)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/tensor.py", line 2960, in create
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return wrap_fx_proxy_cls(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3636, in wrap_fx_proxy_cls
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     out: VTTypeAlias = _wrap_fx_proxy(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                        ^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3767, in _wrap_fx_proxy
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     example_value = get_fake_value(proxy.node, tx, allow_non_graph_fake=True)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3949, in get_fake_value
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return _get_fake_value_impl(node, tx, allow_non_graph_fake)
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4154, in _get_fake_value_impl
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     _wrap_graph_break_with_torch_runtime_err(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3938, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise exc.with_traceback(e.__traceback__) from None
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3935, in _wrap_graph_break_with_torch_runtime_err
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     gb_fn()
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 4155, in <lambda>
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     lambda: unimplemented(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]             ^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/exc.py", line 723, in unimplemented
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise Unsupported(
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] torch._dynamo.exc.TorchRuntimeError: RuntimeError when making fake tensor call
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Explanation: Dynamo failed to run FX node with fake tensors: call_function <Wrapped function <original true_divide>>(*(FakeTensor(..., size=(2,), dtype=torch.int64), FakeTensor(..., size=(2,), dtype=torch.int64)), **{'out': FakeTensor(..., size=(2,), dtype=torch.float64), 'where': FakeTensor(..., size=(2,), dtype=torch.bool)}): got RuntimeError('Boolean value of Tensor with more than one value is ambiguous')
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   Developer debug context: 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]  For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb4315.html
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] from user code:
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]    File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/scipy/ndimage/_interpolation.py", line 888, in torch_dynamo_resume_in_zoom_at_843
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     zoom = np.divide(zoom_nominator, zoom_div,
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+W1103 14:44:49.026000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] WON'T CONVERT torch_dynamo_resume_in_metric_at_42 /Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/training/acdc_evaluation.py line 42 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] due to: 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Traceback (most recent call last):
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2319, in __call__
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = self._inner_convert(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 777, in __call__
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2168, in _compile
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise InternalTorchDynamoError(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2102, in _compile
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_utils_internal.py", line 96, in wrapper_function
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return function(*args, **kwargs)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1687, in compile_inner
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile_inner(code, one_graph, hooks)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1747, in _compile_inner
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     dynamo_output = compile_frame(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1584, in compile_frame
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     bytecode, tracer_output = transform_code_object(code, transform)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/bytecode_transformation.py", line 1821, in transform_code_object
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = transformations(instructions, code_options)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1555, in transform
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = trace_frame(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 368, in _fn
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return fn(*args, **kwargs)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 954, in trace_frame
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     run_tracer()
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 935, in run_tracer
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer.run()
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1950, in run
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     while self.step():
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1603, in step
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.dispatch_table[inst.opcode](self, inst)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1076, in wrapper
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return inner_fn(self, inst)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 505, in impl
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.push(fn_var.call_function(self, self.popn(nargs), {}))
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1588, in call_function
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return handler(tx, args, kwargs)  # type: ignore[return-value]
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1019, in <lambda>
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return lambda tx, args, kwargs: obj.call_function(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                     ^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1588, in call_function
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return handler(tx, args, kwargs)  # type: ignore[return-value]
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1490, in _handle_insert_op_in_graph
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return wrap_fx_proxy_cls(variables.NumpyNdarrayVariable, tx, proxy)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3636, in wrap_fx_proxy_cls
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     out: VTTypeAlias = _wrap_fx_proxy(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                        ^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3770, in _wrap_fx_proxy
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return handle_traced_output(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3809, in handle_traced_output
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     var = construct_tensor_variable(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 4137, in construct_tensor_variable
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     set_example_value(proxy.node, example_value)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3215, in set_example_value
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     := torch.fx.experimental.symbolic_shapes.compute_unbacked_bindings(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/fx/experimental/symbolic_shapes.py", line 1475, in compute_unbacked_bindings
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise PendingUnbackedSymbolNotFound(msg)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] torch._dynamo.exc.InternalTorchDynamoError: PendingUnbackedSymbolNotFound: Pending unbacked symbols {u9, u7} not in returned outputs FakeTensor(..., size=(u6, u8, u10), dtype=torch.bool) ((55296, 216, 1), u11).
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Did you accidentally call new_dynamic_size() or item() more times than you needed to in your fake implementation?
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] For more help, see https://docs.google.com/document/d/1RWrH-3wLEpzR9kCS6gGBNen_-Fs-8PVbWWFE5AcgeWE/edit
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] from user code:
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]    File "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/training/acdc_evaluation.py", line 45, in torch_dynamo_resume_in_metric_at_42
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     pred, gt = pred[bounds], gt[bounds]
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                ^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Traceback (most recent call last):
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2319, in __call__
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = self._inner_convert(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 777, in __call__
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2168, in _compile
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise InternalTorchDynamoError(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 2102, in _compile
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_utils_internal.py", line 96, in wrapper_function
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return function(*args, **kwargs)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1687, in compile_inner
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     result = _compile_inner(code, one_graph, hooks)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1747, in _compile_inner
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     dynamo_output = compile_frame(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1584, in compile_frame
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     bytecode, tracer_output = transform_code_object(code, transform)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/bytecode_transformation.py", line 1821, in transform_code_object
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = transformations(instructions, code_options)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 1555, in transform
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer_output = trace_frame(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                     ^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 368, in _fn
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return fn(*args, **kwargs)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 954, in trace_frame
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     run_tracer()
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 935, in run_tracer
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     tracer.run()
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1950, in run
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     while self.step():
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1603, in step
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.dispatch_table[inst.opcode](self, inst)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 1076, in wrapper
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return inner_fn(self, inst)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 505, in impl
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     self.push(fn_var.call_function(self, self.popn(nargs), {}))
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1588, in call_function
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return handler(tx, args, kwargs)  # type: ignore[return-value]
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1019, in <lambda>
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return lambda tx, args, kwargs: obj.call_function(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                                     ^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1588, in call_function
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return handler(tx, args, kwargs)  # type: ignore[return-value]
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 1490, in _handle_insert_op_in_graph
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return wrap_fx_proxy_cls(variables.NumpyNdarrayVariable, tx, proxy)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3636, in wrap_fx_proxy_cls
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     out: VTTypeAlias = _wrap_fx_proxy(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                        ^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3770, in _wrap_fx_proxy
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     return handle_traced_output(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]            ^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 3809, in handle_traced_output
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     var = construct_tensor_variable(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/variables/builder.py", line 4137, in construct_tensor_variable
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     set_example_value(proxy.node, example_value)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 3215, in set_example_value
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     := torch.fx.experimental.symbolic_shapes.compute_unbacked_bindings(
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]   File "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/torch/fx/experimental/symbolic_shapes.py", line 1475, in compute_unbacked_bindings
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     raise PendingUnbackedSymbolNotFound(msg)
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] torch._dynamo.exc.InternalTorchDynamoError: PendingUnbackedSymbolNotFound: Pending unbacked symbols {u9, u7} not in returned outputs FakeTensor(..., size=(u6, u8, u10), dtype=torch.bool) ((55296, 216, 1), u11).
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Did you accidentally call new_dynamic_size() or item() more times than you needed to in your fake implementation?
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] For more help, see https://docs.google.com/document/d/1RWrH-3wLEpzR9kCS6gGBNen_-Fs-8PVbWWFE5AcgeWE/edit
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] from user code:
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]    File "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/training/acdc_evaluation.py", line 45, in torch_dynamo_resume_in_metric_at_42
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]     pred, gt = pred[bounds], gt[bounds]
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415]                ^^^^^^^^^^^^^^^^^^^^^^^^
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+W1103 14:44:49.963000 433734 site-packages/torch/_dynamo/convert_frame.py:2415] 
+W1103 14:45:03.742000 433734 site-packages/torch/_dynamo/convert_frame.py:1994] [14/8] torch._dynamo hit config.recompile_limit (8)
+W1103 14:45:03.742000 433734 site-packages/torch/_dynamo/convert_frame.py:1994] [14/8]    function: 'torch_dynamo_resume_in_zoom_at_839' (/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/lib/python3.11/site-packages/scipy/ndimage/_interpolation.py:839)
+W1103 14:45:03.742000 433734 site-packages/torch/_dynamo/convert_frame.py:1994] [14/8]    last reason: 14/3: tensor '___from_numpy(input)' dtype mismatch. expected Long, actual Float
+W1103 14:45:03.742000 433734 site-packages/torch/_dynamo/convert_frame.py:1994] [14/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1103 14:45:03.742000 433734 site-packages/torch/_dynamo/convert_frame.py:1994] [14/8] To diagnose recompilation issues, see https://docs.pytorch.org/docs/main/user_guide/torch_compiler/compile/programming_model.recompilation.html
+[EPOCH-TEST] mean_dice=0.3312 class1=0.2992 class2=0.2925 class3=0.4020
+[EPOCH-BEST] epoch=1/400 best_epoch=1 best_dice=33.124268%
+[EPOCH-TEST] mean_dice=0.5616 class1=0.5440 class2=0.4375 class3=0.7032
+[EPOCH-BEST] epoch=2/400 best_epoch=2 best_dice=56.157470%
+[EPOCH-TEST] mean_dice=0.4949 class1=0.5161 class2=0.3135 class3=0.6551
+[EPOCH-BEST] epoch=3/400 best_epoch=2 best_dice=56.157470%
+[EPOCH-TEST] mean_dice=0.5796 class1=0.5194 class2=0.4955 class3=0.7239
+[EPOCH-BEST] epoch=4/400 best_epoch=4 best_dice=57.958776%
+[EPOCH-TEST] mean_dice=0.6992 class1=0.7146 class2=0.5474 class3=0.8356
+[EPOCH-BEST] epoch=5/400 best_epoch=5 best_dice=69.922280%
+[EPOCH-TEST] mean_dice=0.7070 class1=0.7118 class2=0.5849 class3=0.8243
+[EPOCH-BEST] epoch=6/400 best_epoch=6 best_dice=70.699990%
+[EPOCH-TEST] mean_dice=0.7253 class1=0.7781 class2=0.5693 class3=0.8286
+[EPOCH-BEST] epoch=7/400 best_epoch=7 best_dice=72.529924%
+[EPOCH-TEST] mean_dice=0.7782 class1=0.7654 class2=0.6719 class3=0.8973
+[EPOCH-BEST] epoch=8/400 best_epoch=8 best_dice=77.819288%
+[EPOCH-TEST] mean_dice=0.8222 class1=0.8163 class2=0.7201 class3=0.9301
+[EPOCH-BEST] epoch=9/400 best_epoch=9 best_dice=82.215250%
+[EPOCH-TEST] mean_dice=0.8251 class1=0.8332 class2=0.7329 class3=0.9094
+[EPOCH-BEST] epoch=10/400 best_epoch=10 best_dice=82.513535%
+[EPOCH-TEST] mean_dice=0.8083 class1=0.8272 class2=0.6940 class3=0.9037
+[EPOCH-BEST] epoch=11/400 best_epoch=10 best_dice=82.513535%
+[EPOCH-TEST] mean_dice=0.7964 class1=0.8177 class2=0.6671 class3=0.9044
+[EPOCH-BEST] epoch=12/400 best_epoch=10 best_dice=82.513535%
+[EPOCH-TEST] mean_dice=0.8063 class1=0.7858 class2=0.6994 class3=0.9336
+[EPOCH-BEST] epoch=13/400 best_epoch=10 best_dice=82.513535%
+[EPOCH-TEST] mean_dice=0.8414 class1=0.8509 class2=0.7479 class3=0.9255
+[EPOCH-BEST] epoch=14/400 best_epoch=14 best_dice=84.144151%
+[EPOCH-TEST] mean_dice=0.8450 class1=0.8488 class2=0.7552 class3=0.9310
+[EPOCH-BEST] epoch=15/400 best_epoch=15 best_dice=84.499347%
+[EPOCH-TEST] mean_dice=0.8735 class1=0.8610 class2=0.8134 class3=0.9461
+[EPOCH-BEST] epoch=16/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8662 class1=0.8437 class2=0.8050 class3=0.9499
+[EPOCH-BEST] epoch=17/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8390 class1=0.8245 class2=0.7679 class3=0.9247
+[EPOCH-BEST] epoch=18/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8279 class1=0.8096 class2=0.7223 class3=0.9520
+[EPOCH-BEST] epoch=19/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8616 class1=0.8538 class2=0.7786 class3=0.9524
+[EPOCH-BEST] epoch=20/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8060 class1=0.7954 class2=0.6751 class3=0.9474
+[EPOCH-BEST] epoch=21/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8287 class1=0.8220 class2=0.7088 class3=0.9553
+[EPOCH-BEST] epoch=22/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8578 class1=0.8584 class2=0.7609 class3=0.9540
+[EPOCH-BEST] epoch=23/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8554 class1=0.8605 class2=0.7512 class3=0.9544
+[EPOCH-BEST] epoch=24/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8670 class1=0.8484 class2=0.7974 class3=0.9551
+[EPOCH-BEST] epoch=25/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8557 class1=0.8594 class2=0.7500 class3=0.9578
+[EPOCH-BEST] epoch=26/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8562 class1=0.8582 class2=0.7593 class3=0.9510
+[EPOCH-BEST] epoch=27/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8407 class1=0.8579 class2=0.7223 class3=0.9420
+[EPOCH-BEST] epoch=28/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8694 class1=0.8580 class2=0.7900 class3=0.9603
+[EPOCH-BEST] epoch=29/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8547 class1=0.8318 class2=0.7726 class3=0.9596
+[EPOCH-BEST] epoch=30/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8637 class1=0.8699 class2=0.7616 class3=0.9596
+[EPOCH-BEST] epoch=31/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8663 class1=0.8558 class2=0.7845 class3=0.9586
+[EPOCH-BEST] epoch=32/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8597 class1=0.8600 class2=0.7592 class3=0.9600
+[EPOCH-BEST] epoch=33/400 best_epoch=16 best_dice=87.352949%
+[EPOCH-TEST] mean_dice=0.8836 class1=0.8775 class2=0.8141 class3=0.9591
+[EPOCH-BEST] epoch=34/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8674 class1=0.8662 class2=0.7790 class3=0.9570
+[EPOCH-BEST] epoch=35/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8441 class1=0.8582 class2=0.7193 class3=0.9547
+[EPOCH-BEST] epoch=36/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8672 class1=0.8667 class2=0.7776 class3=0.9572
+[EPOCH-BEST] epoch=37/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8785 class1=0.8526 class2=0.8240 class3=0.9589
+[EPOCH-BEST] epoch=38/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8562 class1=0.8493 class2=0.7578 class3=0.9613
+[EPOCH-BEST] epoch=39/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8824 class1=0.8699 class2=0.8150 class3=0.9624
+[EPOCH-BEST] epoch=40/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8708 class1=0.8603 class2=0.7951 class3=0.9569
+[EPOCH-BEST] epoch=41/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8623 class1=0.8487 class2=0.7786 class3=0.9595
+[EPOCH-BEST] epoch=42/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8751 class1=0.8712 class2=0.7926 class3=0.9617
+[EPOCH-BEST] epoch=43/400 best_epoch=34 best_dice=88.356477%
+[EPOCH-TEST] mean_dice=0.8836 class1=0.8696 class2=0.8194 class3=0.9619
+[EPOCH-BEST] epoch=44/400 best_epoch=44 best_dice=88.363737%
+[EPOCH-TEST] mean_dice=0.8837 class1=0.8632 class2=0.8258 class3=0.9620
+[EPOCH-BEST] epoch=45/400 best_epoch=45 best_dice=88.367069%
+[EPOCH-TEST] mean_dice=0.8592 class1=0.8605 class2=0.7544 class3=0.9628
+[EPOCH-BEST] epoch=46/400 best_epoch=45 best_dice=88.367069%
+[EPOCH-TEST] mean_dice=0.8756 class1=0.8660 class2=0.8008 class3=0.9600
+[EPOCH-BEST] epoch=47/400 best_epoch=45 best_dice=88.367069%
+[EPOCH-TEST] mean_dice=0.8782 class1=0.8683 class2=0.8058 class3=0.9607
+[EPOCH-BEST] epoch=48/400 best_epoch=45 best_dice=88.367069%
+[EPOCH-TEST] mean_dice=0.8924 class1=0.8802 class2=0.8330 class3=0.9639
+[EPOCH-BEST] epoch=49/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8878 class1=0.8766 class2=0.8270 class3=0.9598
+[EPOCH-BEST] epoch=50/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8814 class1=0.8709 class2=0.8170 class3=0.9563
+[EPOCH-BEST] epoch=51/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8872 class1=0.8814 class2=0.8227 class3=0.9576
+[EPOCH-BEST] epoch=52/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8740 class1=0.8603 class2=0.7999 class3=0.9617
+[EPOCH-BEST] epoch=53/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8899 class1=0.8778 class2=0.8310 class3=0.9608
+[EPOCH-BEST] epoch=54/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8746 class1=0.8723 class2=0.7886 class3=0.9629
+[EPOCH-BEST] epoch=55/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8735 class1=0.8481 class2=0.8096 class3=0.9627
+[EPOCH-BEST] epoch=56/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8758 class1=0.8703 class2=0.7950 class3=0.9622
+[EPOCH-BEST] epoch=57/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8716 class1=0.8615 class2=0.7899 class3=0.9633
+[EPOCH-BEST] epoch=58/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8789 class1=0.8748 class2=0.7997 class3=0.9623
+[EPOCH-BEST] epoch=59/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8687 class1=0.8672 class2=0.7771 class3=0.9617
+[EPOCH-BEST] epoch=60/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8724 class1=0.8592 class2=0.7948 class3=0.9632
+[EPOCH-BEST] epoch=61/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8718 class1=0.8684 class2=0.7835 class3=0.9635
+[EPOCH-BEST] epoch=62/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8800 class1=0.8646 class2=0.8124 class3=0.9629
+[EPOCH-BEST] epoch=63/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8662 class1=0.8395 class2=0.7986 class3=0.9606
+[EPOCH-BEST] epoch=64/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8705 class1=0.8476 class2=0.8052 class3=0.9588
+[EPOCH-BEST] epoch=65/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8634 class1=0.8454 class2=0.7864 class3=0.9583
+[EPOCH-BEST] epoch=66/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8733 class1=0.8546 class2=0.8052 class3=0.9599
+[EPOCH-BEST] epoch=67/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8554 class1=0.8411 class2=0.7688 class3=0.9562
+[EPOCH-BEST] epoch=68/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8457 class1=0.8291 class2=0.7527 class3=0.9552
+[EPOCH-BEST] epoch=69/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8654 class1=0.8605 class2=0.7814 class3=0.9544
+[EPOCH-BEST] epoch=70/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8784 class1=0.8641 class2=0.8104 class3=0.9608
+[EPOCH-BEST] epoch=71/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8642 class1=0.8418 class2=0.7938 class3=0.9568
+[EPOCH-BEST] epoch=72/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8586 class1=0.8511 class2=0.7692 class3=0.9557
+[EPOCH-BEST] epoch=73/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8695 class1=0.8603 class2=0.7900 class3=0.9582
+[EPOCH-BEST] epoch=74/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8648 class1=0.8580 class2=0.7754 class3=0.9609
+[EPOCH-BEST] epoch=75/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8737 class1=0.8627 class2=0.7986 class3=0.9598
+[EPOCH-BEST] epoch=76/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8769 class1=0.8678 class2=0.8003 class3=0.9627
+[EPOCH-BEST] epoch=77/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8792 class1=0.8655 class2=0.8100 class3=0.9619
+[EPOCH-BEST] epoch=78/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8667 class1=0.8476 class2=0.7903 class3=0.9623
+[EPOCH-BEST] epoch=79/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8571 class1=0.8371 class2=0.7778 class3=0.9564
+[EPOCH-BEST] epoch=80/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8743 class1=0.8577 class2=0.8030 class3=0.9623
+[EPOCH-BEST] epoch=81/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8770 class1=0.8624 class2=0.8087 class3=0.9601
+[EPOCH-BEST] epoch=82/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8675 class1=0.8337 class2=0.8054 class3=0.9634
+[EPOCH-BEST] epoch=83/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8753 class1=0.8610 class2=0.8032 class3=0.9617
+[EPOCH-BEST] epoch=84/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8751 class1=0.8558 class2=0.8084 class3=0.9612
+[EPOCH-BEST] epoch=85/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8790 class1=0.8555 class2=0.8209 class3=0.9607
+[EPOCH-BEST] epoch=86/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8767 class1=0.8659 class2=0.8022 class3=0.9620
+[EPOCH-BEST] epoch=87/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8794 class1=0.8641 class2=0.8160 class3=0.9581
+[EPOCH-BEST] epoch=88/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8784 class1=0.8639 class2=0.8101 class3=0.9612
+[EPOCH-BEST] epoch=89/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8846 class1=0.8723 class2=0.8202 class3=0.9613
+[EPOCH-BEST] epoch=90/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8723 class1=0.8591 class2=0.7987 class3=0.9591
+[EPOCH-BEST] epoch=91/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8798 class1=0.8645 class2=0.8183 class3=0.9567
+[EPOCH-BEST] epoch=92/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8842 class1=0.8582 class2=0.8323 class3=0.9621
+[EPOCH-BEST] epoch=93/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8798 class1=0.8599 class2=0.8209 class3=0.9587
+[EPOCH-BEST] epoch=94/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8772 class1=0.8585 class2=0.8116 class3=0.9616
+[EPOCH-BEST] epoch=95/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8713 class1=0.8585 class2=0.8043 class3=0.9512
+[EPOCH-BEST] epoch=96/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8718 class1=0.8650 class2=0.7964 class3=0.9540
+[EPOCH-BEST] epoch=97/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8711 class1=0.8651 class2=0.7950 class3=0.9533
+[EPOCH-BEST] epoch=98/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8773 class1=0.8597 class2=0.8144 class3=0.9579
+[EPOCH-BEST] epoch=99/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8763 class1=0.8555 class2=0.8158 class3=0.9576
+[EPOCH-BEST] epoch=100/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8747 class1=0.8657 class2=0.8030 class3=0.9553
+[EPOCH-BEST] epoch=101/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8819 class1=0.8753 class2=0.8103 class3=0.9602
+[EPOCH-BEST] epoch=102/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8719 class1=0.8617 class2=0.7978 class3=0.9562
+[EPOCH-BEST] epoch=103/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8724 class1=0.8601 class2=0.8007 class3=0.9562
+[EPOCH-BEST] epoch=104/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8825 class1=0.8592 class2=0.8285 class3=0.9597
+[EPOCH-BEST] epoch=105/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8816 class1=0.8707 class2=0.8149 class3=0.9592
+[EPOCH-BEST] epoch=106/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8859 class1=0.8722 class2=0.8248 class3=0.9608
+[EPOCH-BEST] epoch=107/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8794 class1=0.8683 class2=0.8118 class3=0.9582
+[EPOCH-BEST] epoch=108/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8748 class1=0.8618 class2=0.8117 class3=0.9510
+[EPOCH-BEST] epoch=109/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8794 class1=0.8689 class2=0.8117 class3=0.9575
+[EPOCH-BEST] epoch=110/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8848 class1=0.8653 class2=0.8284 class3=0.9606
+[EPOCH-BEST] epoch=111/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8849 class1=0.8666 class2=0.8271 class3=0.9611
+[EPOCH-BEST] epoch=112/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8773 class1=0.8611 class2=0.8135 class3=0.9575
+[EPOCH-BEST] epoch=113/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8847 class1=0.8674 class2=0.8276 class3=0.9590
+[EPOCH-BEST] epoch=114/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8827 class1=0.8632 class2=0.8263 class3=0.9585
+[EPOCH-BEST] epoch=115/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8818 class1=0.8684 class2=0.8153 class3=0.9617
+[EPOCH-BEST] epoch=116/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8813 class1=0.8715 class2=0.8171 class3=0.9553
+[EPOCH-BEST] epoch=117/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8782 class1=0.8657 class2=0.8111 class3=0.9577
+[EPOCH-BEST] epoch=118/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8825 class1=0.8675 class2=0.8235 class3=0.9566
+[EPOCH-BEST] epoch=119/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8846 class1=0.8674 class2=0.8283 class3=0.9579
+[EPOCH-BEST] epoch=120/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8774 class1=0.8649 class2=0.8093 class3=0.9580
+[EPOCH-BEST] epoch=121/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8753 class1=0.8634 class2=0.8101 class3=0.9525
+[EPOCH-BEST] epoch=122/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8781 class1=0.8648 class2=0.8140 class3=0.9556
+[EPOCH-BEST] epoch=123/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8832 class1=0.8746 class2=0.8185 class3=0.9565
+[EPOCH-BEST] epoch=124/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8866 class1=0.8662 class2=0.8341 class3=0.9595
+[EPOCH-BEST] epoch=125/400 best_epoch=49 best_dice=89.236301%
+[EPOCH-TEST] mean_dice=0.8935 class1=0.8859 class2=0.8357 class3=0.9588
+[EPOCH-BEST] epoch=126/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8885 class1=0.8676 class2=0.8353 class3=0.9626
+[EPOCH-BEST] epoch=127/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8883 class1=0.8704 class2=0.8352 class3=0.9594
+[EPOCH-BEST] epoch=128/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8733 class1=0.8641 class2=0.8005 class3=0.9554
+[EPOCH-BEST] epoch=129/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8750 class1=0.8639 class2=0.8054 class3=0.9558
+[EPOCH-BEST] epoch=130/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8786 class1=0.8606 class2=0.8186 class3=0.9565
+[EPOCH-BEST] epoch=131/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8737 class1=0.8576 class2=0.8121 class3=0.9515
+[EPOCH-BEST] epoch=132/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8775 class1=0.8638 class2=0.8131 class3=0.9556
+[EPOCH-BEST] epoch=133/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8757 class1=0.8594 class2=0.8096 class3=0.9583
+[EPOCH-BEST] epoch=134/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8748 class1=0.8623 class2=0.8045 class3=0.9577
+[EPOCH-BEST] epoch=135/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8843 class1=0.8794 class2=0.8164 class3=0.9571
+[EPOCH-BEST] epoch=136/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8825 class1=0.8767 class2=0.8135 class3=0.9574
+[EPOCH-BEST] epoch=137/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8790 class1=0.8629 class2=0.8176 class3=0.9564
+[EPOCH-BEST] epoch=138/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8773 class1=0.8662 class2=0.8118 class3=0.9538
+[EPOCH-BEST] epoch=139/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8833 class1=0.8717 class2=0.8235 class3=0.9547
+[EPOCH-BEST] epoch=140/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8848 class1=0.8729 class2=0.8237 class3=0.9579
+[EPOCH-BEST] epoch=141/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8809 class1=0.8709 class2=0.8150 class3=0.9568
+[EPOCH-BEST] epoch=142/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8851 class1=0.8689 class2=0.8311 class3=0.9552
+[EPOCH-BEST] epoch=143/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8726 class1=0.8576 class2=0.8069 class3=0.9533
+[EPOCH-BEST] epoch=144/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8802 class1=0.8689 class2=0.8150 class3=0.9567
+[EPOCH-BEST] epoch=145/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8760 class1=0.8587 class2=0.8142 class3=0.9553
+[EPOCH-BEST] epoch=146/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8752 class1=0.8713 class2=0.8007 class3=0.9536
+[EPOCH-BEST] epoch=147/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8758 class1=0.8670 class2=0.8058 class3=0.9546
+[EPOCH-BEST] epoch=148/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8775 class1=0.8671 class2=0.8088 class3=0.9567
+[EPOCH-BEST] epoch=149/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8775 class1=0.8699 class2=0.8096 class3=0.9530
+[EPOCH-BEST] epoch=150/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8799 class1=0.8651 class2=0.8190 class3=0.9556
+[EPOCH-BEST] epoch=151/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8822 class1=0.8678 class2=0.8194 class3=0.9593
+[EPOCH-BEST] epoch=152/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8793 class1=0.8709 class2=0.8096 class3=0.9574
+[EPOCH-BEST] epoch=153/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8769 class1=0.8655 class2=0.8077 class3=0.9574
+[EPOCH-BEST] epoch=154/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8875 class1=0.8822 class2=0.8216 class3=0.9587
+[EPOCH-BEST] epoch=155/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8800 class1=0.8693 class2=0.8140 class3=0.9567
+[EPOCH-BEST] epoch=156/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8800 class1=0.8700 class2=0.8159 class3=0.9539
+[EPOCH-BEST] epoch=157/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8789 class1=0.8637 class2=0.8162 class3=0.9568
+[EPOCH-BEST] epoch=158/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8797 class1=0.8692 class2=0.8139 class3=0.9560
+[EPOCH-BEST] epoch=159/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8732 class1=0.8596 class2=0.8055 class3=0.9545
+[EPOCH-BEST] epoch=160/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8780 class1=0.8662 class2=0.8108 class3=0.9571
+[EPOCH-BEST] epoch=161/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8718 class1=0.8652 class2=0.7978 class3=0.9526
+[EPOCH-BEST] epoch=162/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8849 class1=0.8717 class2=0.8248 class3=0.9583
+[EPOCH-BEST] epoch=163/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8829 class1=0.8682 class2=0.8217 class3=0.9586
+[EPOCH-BEST] epoch=164/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8791 class1=0.8694 class2=0.8106 class3=0.9573
+[EPOCH-BEST] epoch=165/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8810 class1=0.8647 class2=0.8214 class3=0.9571
+[EPOCH-BEST] epoch=166/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8757 class1=0.8572 class2=0.8117 class3=0.9583
+[EPOCH-BEST] epoch=167/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8794 class1=0.8636 class2=0.8174 class3=0.9572
+[EPOCH-BEST] epoch=168/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8728 class1=0.8657 class2=0.7981 class3=0.9546
+[EPOCH-BEST] epoch=169/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8748 class1=0.8631 class2=0.8051 class3=0.9563
+[EPOCH-BEST] epoch=170/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8797 class1=0.8662 class2=0.8157 class3=0.9574
+[EPOCH-BEST] epoch=171/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8755 class1=0.8656 class2=0.8048 class3=0.9563
+[EPOCH-BEST] epoch=172/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8776 class1=0.8660 class2=0.8091 class3=0.9576
+[EPOCH-BEST] epoch=173/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8808 class1=0.8703 class2=0.8166 class3=0.9556
+[EPOCH-BEST] epoch=174/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8797 class1=0.8654 class2=0.8159 class3=0.9579
+[EPOCH-BEST] epoch=175/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8826 class1=0.8729 class2=0.8174 class3=0.9574
+[EPOCH-BEST] epoch=176/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8841 class1=0.8760 class2=0.8184 class3=0.9578
+[EPOCH-BEST] epoch=177/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8748 class1=0.8686 class2=0.8023 class3=0.9534
+[EPOCH-BEST] epoch=178/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8790 class1=0.8625 class2=0.8166 class3=0.9579
+[EPOCH-BEST] epoch=179/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8714 class1=0.8571 class2=0.8032 class3=0.9539
+[EPOCH-BEST] epoch=180/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8802 class1=0.8694 class2=0.8126 class3=0.9585
+[EPOCH-BEST] epoch=181/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8657 class1=0.8553 class2=0.7860 class3=0.9559
+[EPOCH-BEST] epoch=182/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8777 class1=0.8601 class2=0.8145 class3=0.9583
+[EPOCH-BEST] epoch=183/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8753 class1=0.8643 class2=0.8052 class3=0.9565
+[EPOCH-BEST] epoch=184/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8781 class1=0.8699 class2=0.8094 class3=0.9549
+[EPOCH-BEST] epoch=185/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8747 class1=0.8632 class2=0.8028 class3=0.9581
+[EPOCH-BEST] epoch=186/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8798 class1=0.8686 class2=0.8120 class3=0.9587
+[EPOCH-BEST] epoch=187/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8796 class1=0.8663 class2=0.8142 class3=0.9582
+[EPOCH-BEST] epoch=188/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8735 class1=0.8686 class2=0.7981 class3=0.9539
+[EPOCH-BEST] epoch=189/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8699 class1=0.8657 class2=0.7902 class3=0.9537
+[EPOCH-BEST] epoch=190/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8764 class1=0.8667 class2=0.8074 class3=0.9551
+[EPOCH-BEST] epoch=191/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8817 class1=0.8743 class2=0.8129 class3=0.9578
+[EPOCH-BEST] epoch=192/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8765 class1=0.8679 class2=0.8045 class3=0.9570
+[EPOCH-BEST] epoch=193/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8805 class1=0.8699 class2=0.8121 class3=0.9595
+[EPOCH-BEST] epoch=194/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8772 class1=0.8673 class2=0.8072 class3=0.9572
+[EPOCH-BEST] epoch=195/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8816 class1=0.8633 class2=0.8240 class3=0.9576
+[EPOCH-BEST] epoch=196/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8794 class1=0.8705 class2=0.8114 class3=0.9564
+[EPOCH-BEST] epoch=197/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8777 class1=0.8619 class2=0.8139 class3=0.9574
+[EPOCH-BEST] epoch=198/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8751 class1=0.8693 class2=0.8006 class3=0.9554
+[EPOCH-BEST] epoch=199/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8832 class1=0.8708 class2=0.8209 class3=0.9580
+[EPOCH-BEST] epoch=200/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8725 class1=0.8620 class2=0.8005 class3=0.9551
+[EPOCH-BEST] epoch=201/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8784 class1=0.8646 class2=0.8128 class3=0.9577
+[EPOCH-BEST] epoch=202/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8775 class1=0.8670 class2=0.8082 class3=0.9573
+[EPOCH-BEST] epoch=203/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8794 class1=0.8687 class2=0.8115 class3=0.9579
+[EPOCH-BEST] epoch=204/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8768 class1=0.8576 class2=0.8162 class3=0.9566
+[EPOCH-BEST] epoch=205/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8761 class1=0.8665 class2=0.8053 class3=0.9566
+[EPOCH-BEST] epoch=206/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8706 class1=0.8604 class2=0.7955 class3=0.9557
+[EPOCH-BEST] epoch=207/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8786 class1=0.8666 class2=0.8112 class3=0.9578
+[EPOCH-BEST] epoch=208/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8758 class1=0.8643 class2=0.8080 class3=0.9552
+[EPOCH-BEST] epoch=209/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8754 class1=0.8675 class2=0.8015 class3=0.9573
+[EPOCH-BEST] epoch=210/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8814 class1=0.8694 class2=0.8162 class3=0.9586
+[EPOCH-BEST] epoch=211/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8783 class1=0.8708 class2=0.8076 class3=0.9565
+[EPOCH-BEST] epoch=212/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8800 class1=0.8694 class2=0.8118 class3=0.9588
+[EPOCH-BEST] epoch=213/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8786 class1=0.8675 class2=0.8106 class3=0.9576
+[EPOCH-BEST] epoch=214/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8746 class1=0.8617 class2=0.8082 class3=0.9538
+[EPOCH-BEST] epoch=215/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8781 class1=0.8640 class2=0.8156 class3=0.9547
+[EPOCH-BEST] epoch=216/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8742 class1=0.8628 class2=0.8059 class3=0.9538
+[EPOCH-BEST] epoch=217/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8778 class1=0.8642 class2=0.8141 class3=0.9551
+[EPOCH-BEST] epoch=218/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8797 class1=0.8697 class2=0.8109 class3=0.9584
+[EPOCH-BEST] epoch=219/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8789 class1=0.8692 class2=0.8118 class3=0.9557
+[EPOCH-BEST] epoch=220/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8817 class1=0.8725 class2=0.8151 class3=0.9574
+[EPOCH-BEST] epoch=221/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8806 class1=0.8652 class2=0.8201 class3=0.9565
+[EPOCH-BEST] epoch=222/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8769 class1=0.8662 class2=0.8103 class3=0.9543
+[EPOCH-BEST] epoch=223/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8755 class1=0.8628 class2=0.8073 class3=0.9565
+[EPOCH-BEST] epoch=224/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8828 class1=0.8713 class2=0.8180 class3=0.9590
+[EPOCH-BEST] epoch=225/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8796 class1=0.8703 class2=0.8111 class3=0.9575
+[EPOCH-BEST] epoch=226/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8804 class1=0.8685 class2=0.8156 class3=0.9570
+[EPOCH-BEST] epoch=227/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8762 class1=0.8680 class2=0.8065 class3=0.9541
+[EPOCH-BEST] epoch=228/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8815 class1=0.8723 class2=0.8172 class3=0.9550
+[EPOCH-BEST] epoch=229/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8826 class1=0.8753 class2=0.8151 class3=0.9576
+[EPOCH-BEST] epoch=230/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8815 class1=0.8747 class2=0.8122 class3=0.9575
+[EPOCH-BEST] epoch=231/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8826 class1=0.8740 class2=0.8159 class3=0.9578
+[EPOCH-BEST] epoch=232/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8777 class1=0.8715 class2=0.8082 class3=0.9535
+[EPOCH-BEST] epoch=233/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8769 class1=0.8654 class2=0.8086 class3=0.9568
+[EPOCH-BEST] epoch=234/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8814 class1=0.8762 class2=0.8121 class3=0.9558
+[EPOCH-BEST] epoch=235/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8822 class1=0.8755 class2=0.8156 class3=0.9556
+[EPOCH-BEST] epoch=236/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8796 class1=0.8725 class2=0.8093 class3=0.9570
+[EPOCH-BEST] epoch=237/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8810 class1=0.8723 class2=0.8130 class3=0.9576
+[EPOCH-BEST] epoch=238/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8803 class1=0.8747 class2=0.8068 class3=0.9593
+[EPOCH-BEST] epoch=239/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8825 class1=0.8778 class2=0.8121 class3=0.9575
+[EPOCH-BEST] epoch=240/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8828 class1=0.8745 class2=0.8170 class3=0.9571
+[EPOCH-BEST] epoch=241/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8806 class1=0.8740 class2=0.8100 class3=0.9578
+[EPOCH-BEST] epoch=242/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8806 class1=0.8700 class2=0.8144 class3=0.9574
+[EPOCH-BEST] epoch=243/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8820 class1=0.8748 class2=0.8127 class3=0.9584
+[EPOCH-BEST] epoch=244/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8784 class1=0.8698 class2=0.8097 class3=0.9557
+[EPOCH-BEST] epoch=245/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8812 class1=0.8726 class2=0.8141 class3=0.9569
+[EPOCH-BEST] epoch=246/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8775 class1=0.8694 class2=0.8069 class3=0.9563
+[EPOCH-BEST] epoch=247/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8767 class1=0.8674 class2=0.8075 class3=0.9551
+[EPOCH-BEST] epoch=248/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8793 class1=0.8721 class2=0.8108 class3=0.9550
+[EPOCH-BEST] epoch=249/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8770 class1=0.8686 class2=0.8080 class3=0.9544
+[EPOCH-BEST] epoch=250/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8755 class1=0.8642 class2=0.8080 class3=0.9542
+[EPOCH-BEST] epoch=251/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8763 class1=0.8664 class2=0.8087 class3=0.9538
+[EPOCH-BEST] epoch=252/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8734 class1=0.8687 class2=0.7971 class3=0.9545
+[EPOCH-BEST] epoch=253/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8773 class1=0.8696 class2=0.8058 class3=0.9565
+[EPOCH-BEST] epoch=254/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8759 class1=0.8652 class2=0.8069 class3=0.9556
+[EPOCH-BEST] epoch=255/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8791 class1=0.8699 class2=0.8107 class3=0.9568
+[EPOCH-BEST] epoch=256/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8751 class1=0.8674 class2=0.8025 class3=0.9552
+[EPOCH-BEST] epoch=257/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8797 class1=0.8716 class2=0.8120 class3=0.9556
+[EPOCH-BEST] epoch=258/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8765 class1=0.8715 class2=0.8035 class3=0.9545
+[EPOCH-BEST] epoch=259/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8818 class1=0.8733 class2=0.8155 class3=0.9565
+[EPOCH-BEST] epoch=260/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8815 class1=0.8721 class2=0.8157 class3=0.9568
+[EPOCH-BEST] epoch=261/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8821 class1=0.8732 class2=0.8149 class3=0.9581
+[EPOCH-BEST] epoch=262/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8815 class1=0.8749 class2=0.8112 class3=0.9583
+[EPOCH-BEST] epoch=263/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8781 class1=0.8685 class2=0.8108 class3=0.9551
+[EPOCH-BEST] epoch=264/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8791 class1=0.8722 class2=0.8105 class3=0.9545
+[EPOCH-BEST] epoch=265/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8785 class1=0.8724 class2=0.8079 class3=0.9550
+[EPOCH-BEST] epoch=266/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8821 class1=0.8722 class2=0.8164 class3=0.9575
+[EPOCH-BEST] epoch=267/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8827 class1=0.8766 class2=0.8153 class3=0.9563
+[EPOCH-BEST] epoch=268/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8798 class1=0.8718 class2=0.8114 class3=0.9562
+[EPOCH-BEST] epoch=269/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8825 class1=0.8741 class2=0.8176 class3=0.9558
+[EPOCH-BEST] epoch=270/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8794 class1=0.8675 class2=0.8153 class3=0.9555
+[EPOCH-BEST] epoch=271/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8786 class1=0.8682 class2=0.8122 class3=0.9553
+[EPOCH-BEST] epoch=272/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8796 class1=0.8708 class2=0.8121 class3=0.9559
+[EPOCH-BEST] epoch=273/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8837 class1=0.8742 class2=0.8219 class3=0.9550
+[EPOCH-BEST] epoch=274/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8810 class1=0.8709 class2=0.8157 class3=0.9563
+[EPOCH-BEST] epoch=275/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8803 class1=0.8704 class2=0.8152 class3=0.9554
+[EPOCH-BEST] epoch=276/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8786 class1=0.8709 class2=0.8084 class3=0.9564
+[EPOCH-BEST] epoch=277/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8803 class1=0.8726 class2=0.8120 class3=0.9563
+[EPOCH-BEST] epoch=278/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8807 class1=0.8719 class2=0.8149 class3=0.9552
+[EPOCH-BEST] epoch=279/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8813 class1=0.8734 class2=0.8158 class3=0.9547
+[EPOCH-BEST] epoch=280/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8808 class1=0.8713 class2=0.8157 class3=0.9553
+[EPOCH-BEST] epoch=281/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8826 class1=0.8759 class2=0.8148 class3=0.9573
+[EPOCH-BEST] epoch=282/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8799 class1=0.8699 class2=0.8144 class3=0.9554
+[EPOCH-BEST] epoch=283/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8820 class1=0.8743 class2=0.8150 class3=0.9566
+[EPOCH-BEST] epoch=284/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8807 class1=0.8748 class2=0.8112 class3=0.9561
+[EPOCH-BEST] epoch=285/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8802 class1=0.8738 class2=0.8110 class3=0.9559
+[EPOCH-BEST] epoch=286/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8828 class1=0.8753 class2=0.8164 class3=0.9567
+[EPOCH-BEST] epoch=287/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8833 class1=0.8770 class2=0.8163 class3=0.9566
+[EPOCH-BEST] epoch=288/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8845 class1=0.8744 class2=0.8210 class3=0.9580
+[EPOCH-BEST] epoch=289/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8837 class1=0.8798 class2=0.8145 class3=0.9568
+[EPOCH-BEST] epoch=290/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8831 class1=0.8757 class2=0.8176 class3=0.9561
+[EPOCH-BEST] epoch=291/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8825 class1=0.8759 class2=0.8150 class3=0.9568
+[EPOCH-BEST] epoch=292/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8816 class1=0.8716 class2=0.8169 class3=0.9562
+[EPOCH-BEST] epoch=293/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8814 class1=0.8733 class2=0.8131 class3=0.9578
+[EPOCH-BEST] epoch=294/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8815 class1=0.8750 class2=0.8133 class3=0.9560
+[EPOCH-BEST] epoch=295/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8793 class1=0.8734 class2=0.8089 class3=0.9556
+[EPOCH-BEST] epoch=296/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8816 class1=0.8755 class2=0.8135 class3=0.9559
+[EPOCH-BEST] epoch=297/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8803 class1=0.8703 class2=0.8147 class3=0.9559
+[EPOCH-BEST] epoch=298/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8819 class1=0.8736 class2=0.8152 class3=0.9570
+[EPOCH-BEST] epoch=299/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8808 class1=0.8718 class2=0.8134 class3=0.9573
+[EPOCH-BEST] epoch=300/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8814 class1=0.8722 class2=0.8144 class3=0.9577
+[EPOCH-BEST] epoch=301/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8806 class1=0.8719 class2=0.8134 class3=0.9564
+[EPOCH-BEST] epoch=302/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8815 class1=0.8756 class2=0.8128 class3=0.9562
+[EPOCH-BEST] epoch=303/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8848 class1=0.8764 class2=0.8202 class3=0.9578
+[EPOCH-BEST] epoch=304/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8853 class1=0.8773 class2=0.8208 class3=0.9576
+[EPOCH-BEST] epoch=305/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8820 class1=0.8716 class2=0.8182 class3=0.9563
+[EPOCH-BEST] epoch=306/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8816 class1=0.8727 class2=0.8152 class3=0.9570
+[EPOCH-BEST] epoch=307/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8844 class1=0.8764 class2=0.8190 class3=0.9578
+[EPOCH-BEST] epoch=308/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8819 class1=0.8739 class2=0.8156 class3=0.9562
+[EPOCH-BEST] epoch=309/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8823 class1=0.8764 class2=0.8130 class3=0.9575
+[EPOCH-BEST] epoch=310/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8796 class1=0.8744 class2=0.8083 class3=0.9561
+[EPOCH-BEST] epoch=311/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8820 class1=0.8738 class2=0.8154 class3=0.9567
+[EPOCH-BEST] epoch=312/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8796 class1=0.8737 class2=0.8087 class3=0.9564
+[EPOCH-BEST] epoch=313/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8814 class1=0.8750 class2=0.8136 class3=0.9554
+[EPOCH-BEST] epoch=314/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8813 class1=0.8738 class2=0.8131 class3=0.9570
+[EPOCH-BEST] epoch=315/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8846 class1=0.8764 class2=0.8194 class3=0.9579
+[EPOCH-BEST] epoch=316/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8832 class1=0.8771 class2=0.8164 class3=0.9562
+[EPOCH-BEST] epoch=317/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8831 class1=0.8742 class2=0.8183 class3=0.9568
+[EPOCH-BEST] epoch=318/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8831 class1=0.8757 class2=0.8163 class3=0.9572
+[EPOCH-BEST] epoch=319/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8852 class1=0.8756 class2=0.8222 class3=0.9577
+[EPOCH-BEST] epoch=320/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8842 class1=0.8750 class2=0.8200 class3=0.9575
+[EPOCH-BEST] epoch=321/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8828 class1=0.8746 class2=0.8161 class3=0.9576
+[EPOCH-BEST] epoch=322/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8814 class1=0.8743 class2=0.8138 class3=0.9562
+[EPOCH-BEST] epoch=323/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8816 class1=0.8712 class2=0.8162 class3=0.9576
+[EPOCH-BEST] epoch=324/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8802 class1=0.8727 class2=0.8111 class3=0.9568
+[EPOCH-BEST] epoch=325/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8831 class1=0.8755 class2=0.8177 class3=0.9560
+[EPOCH-BEST] epoch=326/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8805 class1=0.8725 class2=0.8131 class3=0.9559
+[EPOCH-BEST] epoch=327/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8806 class1=0.8714 class2=0.8139 class3=0.9565
+[EPOCH-BEST] epoch=328/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8803 class1=0.8731 class2=0.8125 class3=0.9554
+[EPOCH-BEST] epoch=329/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8834 class1=0.8776 class2=0.8151 class3=0.9576
+[EPOCH-BEST] epoch=330/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8821 class1=0.8749 class2=0.8145 class3=0.9568
+[EPOCH-BEST] epoch=331/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8818 class1=0.8751 class2=0.8134 class3=0.9570
+[EPOCH-BEST] epoch=332/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8823 class1=0.8756 class2=0.8149 class3=0.9563
+[EPOCH-BEST] epoch=333/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8806 class1=0.8748 class2=0.8112 class3=0.9558
+[EPOCH-BEST] epoch=334/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8821 class1=0.8755 class2=0.8138 class3=0.9569
+[EPOCH-BEST] epoch=335/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8832 class1=0.8754 class2=0.8173 class3=0.9568
+[EPOCH-BEST] epoch=336/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8834 class1=0.8748 class2=0.8183 class3=0.9571
+[EPOCH-BEST] epoch=337/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8817 class1=0.8739 class2=0.8141 class3=0.9569
+[EPOCH-BEST] epoch=338/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8853 class1=0.8774 class2=0.8215 class3=0.9570
+[EPOCH-BEST] epoch=339/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8810 class1=0.8757 class2=0.8113 class3=0.9559
+[EPOCH-BEST] epoch=340/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8830 class1=0.8763 class2=0.8161 class3=0.9567
+[EPOCH-BEST] epoch=341/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8820 class1=0.8756 class2=0.8138 class3=0.9566
+[EPOCH-BEST] epoch=342/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8829 class1=0.8753 class2=0.8164 class3=0.9571
+[EPOCH-BEST] epoch=343/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8843 class1=0.8767 class2=0.8196 class3=0.9567
+[EPOCH-BEST] epoch=344/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8817 class1=0.8757 class2=0.8130 class3=0.9564
+[EPOCH-BEST] epoch=345/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8841 class1=0.8764 class2=0.8183 class3=0.9575
+[EPOCH-BEST] epoch=346/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8829 class1=0.8737 class2=0.8177 class3=0.9572
+[EPOCH-BEST] epoch=347/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8853 class1=0.8772 class2=0.8207 class3=0.9580
+[EPOCH-BEST] epoch=348/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8835 class1=0.8760 class2=0.8171 class3=0.9574
+[EPOCH-BEST] epoch=349/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8844 class1=0.8766 class2=0.8190 class3=0.9577
+[EPOCH-BEST] epoch=350/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8836 class1=0.8749 class2=0.8187 class3=0.9573
+[EPOCH-BEST] epoch=351/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8831 class1=0.8766 class2=0.8162 class3=0.9564
+[EPOCH-BEST] epoch=352/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8835 class1=0.8753 class2=0.8179 class3=0.9574
+[EPOCH-BEST] epoch=353/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8849 class1=0.8772 class2=0.8200 class3=0.9574
+[EPOCH-BEST] epoch=354/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8844 class1=0.8757 class2=0.8196 class3=0.9581
+[EPOCH-BEST] epoch=355/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8838 class1=0.8765 class2=0.8179 class3=0.9571
+[EPOCH-BEST] epoch=356/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8836 class1=0.8757 class2=0.8176 class3=0.9574
+[EPOCH-BEST] epoch=357/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8838 class1=0.8752 class2=0.8184 class3=0.9576
+[EPOCH-BEST] epoch=358/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8829 class1=0.8761 class2=0.8158 class3=0.9568
+[EPOCH-BEST] epoch=359/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8833 class1=0.8756 class2=0.8170 class3=0.9573
+[EPOCH-BEST] epoch=360/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8837 class1=0.8763 class2=0.8179 class3=0.9569
+[EPOCH-BEST] epoch=361/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8827 class1=0.8750 class2=0.8166 class3=0.9567
+[EPOCH-BEST] epoch=362/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8831 class1=0.8742 class2=0.8180 class3=0.9570
+[EPOCH-BEST] epoch=363/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8835 class1=0.8760 class2=0.8166 class3=0.9579
+[EPOCH-BEST] epoch=364/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8857 class1=0.8762 class2=0.8228 class3=0.9582
+[EPOCH-BEST] epoch=365/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8833 class1=0.8761 class2=0.8166 class3=0.9572
+[EPOCH-BEST] epoch=366/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8839 class1=0.8753 class2=0.8190 class3=0.9575
+[EPOCH-BEST] epoch=367/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8829 class1=0.8745 class2=0.8168 class3=0.9575
+[EPOCH-BEST] epoch=368/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8842 class1=0.8762 class2=0.8191 class3=0.9572
+[EPOCH-BEST] epoch=369/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8845 class1=0.8763 class2=0.8193 class3=0.9577
+[EPOCH-BEST] epoch=370/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8849 class1=0.8775 class2=0.8195 class3=0.9577
+[EPOCH-BEST] epoch=371/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8843 class1=0.8770 class2=0.8186 class3=0.9573
+[EPOCH-BEST] epoch=372/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8854 class1=0.8780 class2=0.8206 class3=0.9576
+[EPOCH-BEST] epoch=373/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8852 class1=0.8784 class2=0.8199 class3=0.9573
+[EPOCH-BEST] epoch=374/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8852 class1=0.8767 class2=0.8211 class3=0.9577
+[EPOCH-BEST] epoch=375/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8839 class1=0.8766 class2=0.8180 class3=0.9570
+[EPOCH-BEST] epoch=376/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8852 class1=0.8774 class2=0.8206 class3=0.9577
+[EPOCH-BEST] epoch=377/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8847 class1=0.8764 class2=0.8201 class3=0.9574
+[EPOCH-BEST] epoch=378/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8858 class1=0.8778 class2=0.8217 class3=0.9578
+[EPOCH-BEST] epoch=379/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8840 class1=0.8755 class2=0.8191 class3=0.9574
+[EPOCH-BEST] epoch=380/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8848 class1=0.8764 class2=0.8206 class3=0.9576
+[EPOCH-BEST] epoch=381/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8845 class1=0.8763 class2=0.8197 class3=0.9575
+[EPOCH-BEST] epoch=382/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8842 class1=0.8761 class2=0.8191 class3=0.9576
+[EPOCH-BEST] epoch=383/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8839 class1=0.8766 class2=0.8177 class3=0.9574
+[EPOCH-BEST] epoch=384/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8846 class1=0.8768 class2=0.8197 class3=0.9573
+[EPOCH-BEST] epoch=385/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8844 class1=0.8762 class2=0.8193 class3=0.9577
+[EPOCH-BEST] epoch=386/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8844 class1=0.8759 class2=0.8195 class3=0.9579
+[EPOCH-BEST] epoch=387/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8849 class1=0.8766 class2=0.8203 class3=0.9578
+[EPOCH-BEST] epoch=388/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8847 class1=0.8761 class2=0.8202 class3=0.9578
+[EPOCH-BEST] epoch=389/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8846 class1=0.8763 class2=0.8199 class3=0.9576
+[EPOCH-BEST] epoch=390/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8844 class1=0.8763 class2=0.8193 class3=0.9576
+[EPOCH-BEST] epoch=391/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8847 class1=0.8765 class2=0.8200 class3=0.9575
+[EPOCH-BEST] epoch=392/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8849 class1=0.8768 class2=0.8202 class3=0.9577
+[EPOCH-BEST] epoch=393/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8842 class1=0.8760 class2=0.8189 class3=0.9577
+[EPOCH-BEST] epoch=394/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8852 class1=0.8774 class2=0.8202 class3=0.9579
+[EPOCH-BEST] epoch=395/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8854 class1=0.8771 class2=0.8215 class3=0.9576
+[EPOCH-BEST] epoch=396/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8852 class1=0.8771 class2=0.8207 class3=0.9577
+[EPOCH-BEST] epoch=397/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8847 class1=0.8766 class2=0.8201 class3=0.9574
+[EPOCH-BEST] epoch=398/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8848 class1=0.8769 class2=0.8201 class3=0.9575
+[EPOCH-BEST] epoch=399/400 best_epoch=126 best_dice=89.349079%
+[EPOCH-TEST] mean_dice=0.8848 class1=0.8769 class2=0.8198 class3=0.9576
+[EPOCH-BEST] epoch=400/400 best_epoch=126 best_dice=89.349079%
+`Trainer.fit` stopped: `max_epochs=400` reached.

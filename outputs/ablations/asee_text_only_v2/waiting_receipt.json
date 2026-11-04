@@ -1,0 +1,12 @@
+{
+  "state": "queued",
+  "supervisor": {
+    "pid": 433414,
+    "start_ticks": 1542097,
+    "cwd": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc",
+    "command": "/Disk/HDD/Sk/miniconda3/envs/DeepLearning_xiakun/bin/python /Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/ablations/asee_text_only_v2/preparation/asee_runtime.py --execute "
+  },
+  "predecessor": "outputs/baseline/repeat_2/20261103T025120Z",
+  "created_at_utc": "2026-11-03T06:42:43Z",
+  "one_shot": true
+}

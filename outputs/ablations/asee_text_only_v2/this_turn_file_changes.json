@@ -1,0 +1,19 @@
+{
+  "added": [
+    ".codex/acdc_asee_text_only_training_run.md",
+    "outputs/ablations/asee_text_only_v2/preparation/test_startup_comparison.py",
+    "outputs/ablations/asee_text_only_v2/20261103T064255Z/**",
+    "outputs/ablations/asee_text_only_v2/preparation/startup_fix_audit/**"
+  ],
+  "modified": [
+    "outputs/ablations/asee_text_only_v2/preparation/asee_runtime.py",
+    "outputs/ablations/asee_text_only_v2/preparation/readiness.json",
+    "AGENTS.md",
+    ".codex/README.md",
+    ".codex/acdc_asee_text_only_after_baseline_schedule.md",
+    ".codex/acdc_baseline_snapshot.json"
+  ],
+  "deleted": [],
+  "historical_failure_preserved": true,
+  "scientific_parameter_changes": []
+}

@@ -1,0 +1,8 @@
+best_epoch=126
+best_avg_dsc=0.893490791321
+best_rv=0.885943412781
+best_myo=0.835695207119
+best_lv=0.958833694458
+dice_unit=0..1
+hd95_mm=not_computed
+hd95_voxel=not_computed

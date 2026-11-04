@@ -1,0 +1,45 @@
+{
+  "state": "completed",
+  "exit_code": 0,
+  "completion": {
+    "passed": true,
+    "epochs": 400,
+    "global_step": 37600,
+    "history_rows": 400,
+    "case_rows": 16000,
+    "selection": {
+      "epoch_numbering": "one-based",
+      "max_epochs": 400,
+      "last_evaluated_epoch": 400,
+      "best_epoch": 126,
+      "best_mean_dice": 0.8934907913208008,
+      "evaluation_split": "test",
+      "last_evaluated_volumes": 40,
+      "test_used_for_selection": true,
+      "evaluation_complete": true,
+      "selection_policy": "every epoch, complete test volumes; test used for model selection",
+      "roi_metrics": true,
+      "hd95_mm": null,
+      "hd95_voxel": null,
+      "hd95_computed": false,
+      "class_names_source": "priors/acdc_label_map.verified.json; official legend and sampled training-H5 semantics; raw geometry unverified",
+      "best_checkpoint": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/ablations/asee_text_only_v2/20261103T064255Z/training/version_0/checkpoints/best_test.ckpt",
+      "last_checkpoint": "/Disk/HDD/Sk/EoSeg-main_Synapse_acdc/EoSeg-main_acdc/outputs/ablations/asee_text_only_v2/20261103T064255Z/training/version_0/checkpoints/last.ckpt"
+    },
+    "best_dice_percent": 89.34907913208008,
+    "organs": {
+      "1": {
+        "name": "\u53f3\u5fc3\u5ba4\u8154",
+        "dice_percent": 88.59434127807617
+      },
+      "2": {
+        "name": "\u5fc3\u808c",
+        "dice_percent": 83.5695207118988
+      },
+      "3": {
+        "name": "\u5de6\u5fc3\u5ba4\u8154",
+        "dice_percent": 95.88336944580078
+      }
+    }
+  }
+}
